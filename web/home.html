@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="stylesheet" href="index.css">
+    <title>HOME</title>
+</head>
+<body>
+    <header>
+        <img class="logo" src="" alt="Logo">
+        <!-- Botão de abertura da barra lateral -->
+        <button class="nav-toggle" onclick="toggleNav()">Menu</button>
+        <nav class="nav-bar">
+            <ul class="nav-links">
+                <a class="links" href="#sessao-inicio">
+                    <li>HOME</li>
+                </a>
+                <a class="links" href="#sessao-quemSomos">
+                    <li>NIKE</li>
+                </a>
+                <a class="links" href="#sessao-quemSomos">
+                    <li>ADIDAS</li>
+                </a>
+                <a class="links" href="#sessao-quemSomos">
+                    <li>VANS</li>
+                </a>
+                <a class="links" href="#sessao-quemSomos">
+                    <li>JORDAN</li>
+                </a>
+                <a class="links" href="#sobre-mim">
+                    <li>PUMA</li>
+                </a>
+                <a class="links" href="simulador.html">
+                    <li>CONVERSE</li>
+                </a>
+                <a class="links" href="#rodape">
+                    <li>NEW BALANCE</li>
+                </a>
+            </ul>
+            <ul class="nav-auth">
+                <a class="links" href="cadastro.html">
+                    <li class="cadastroLogin">CARRINHO</li>
+                </a>
+                <a class="links" href="login.html">
+                    <li class="cadastroLogin">LOGIN</li>
+                </a>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="sessao-inicio" id="sessao-inicio">
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-item">
+                    <img src="adidas_samba.png" alt="Foto principal">
+                </div>
+                <div class="carousel-item">
+                    <img src="force_purple.png" alt="Foto principal">
+                </div>
+                <div class="carousel-item">
+                    <img src="namorados-nike-desk.jpg" alt="Foto principal">
+                </div>
+                <div class="carousel-item">
+                    <img src="vans.png" alt="Foto principal">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sessao-quemSomos" id="sessao-quemSomos">
+        <!-- Conteúdo da seção sobre o projeto -->
+    </section>
+  
+    
+</body>
+</html>
+<script>
+    // Função para alternar a classe da barra de navegação em telas menores
+    function toggleNav() {
+        var navBar = document.querySelector('.nav-bar');
+        navBar.classList.toggle('nav-open');
+    }
+
+    // Função para o carrossel de imagens
+    let currentIndex = 0;
+    function showCarouselItem(index) {
+        const items = document.querySelectorAll('.carousel-item');
+        if (index >= items.length) currentIndex = 0;
+        if (index < 0) currentIndex = items.length - 1;
+        for (let i = 0; i < items.length; i++) {
+            items[i].style.display = 'none';
+        }
+        items[currentIndex].style.display = 'block';
+    }
+
+    function moveCarousel(step) {
+        currentIndex += step;
+        showCarouselItem(currentIndex);
+    }
+
+    // Inicializa o carrossel
+    showCarouselItem(currentIndex);
+
+    // Configura o carrossel para mudar automaticamente a cada 5 segundos
+    setInterval(() => {
+        moveCarousel(1);
+    }, 5000);
+</script>

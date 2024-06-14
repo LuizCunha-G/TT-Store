@@ -1,0 +1,212 @@
+/* Estilos gerais */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #ffffff;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* Cabeçalho */
+header {
+    width: 100%;
+    height: 10%;
+    background: rgba(14, 1, 39, 0.493);
+    backdrop-filter: blur(19.5px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+    padding: 0 20px;
+}
+
+.logo {
+    width: 100px;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    transition: border-bottom 0.3s ease;
+}
+
+.nav-links a:hover {
+    border-bottom: 2px solid #68228B;
+    padding-bottom: 8px;
+}
+
+.nav-auth {
+    display: flex;
+    list-style: none;
+}
+
+.nav-auth a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.nav-auth a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Seções */
+section {
+    height: 100%;
+    width: 100%;
+    padding-top: 10%;
+}
+
+.sessao-inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(../img/bgSite.png);
+    background-size: cover;
+}
+
+.sessao-quemSomos {
+    background: #110531;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.foto-principal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.foto {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+}
+
+/* Carrossel */
+.carousel-container {
+    position: relative;
+    height: 100%;
+    max-height: 100%;
+    width: 100%;
+    max-width: 1290px;
+    margin-top: -8%;
+    margin-bottom: 5%; 
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    transition: 0.5s;
+}
+
+.carousel-item img {
+    width: 100%;
+    display: block;
+}
+
+/* Texto padrão */
+p {
+    font-size: 20px;
+    margin-top: 20px;
+    color: #a09a9a;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    header {
+        height: 8%;
+    }
+
+    .nav-toggle {
+        display: block;
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .nav-bar {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100vh;
+        width: 250px;
+        background-color: rgba(24, 20, 20, 0.425);
+        backdrop-filter: blur(19.5px);
+        transition: left 0.3s ease;
+        z-index: 1;
+    }
+
+    .nav-open {
+        left: 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-auth {
+        margin-top: auto;
+    }
+
+    .nav-links a, .nav-auth a {
+        padding: 15px 20px;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    .sessao-inicio, .sessao-quemSomos {
+        padding-top: 8%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        height: 6%;
+    }
+
+    .logo {
+        width: 60px;
+    }
+}
