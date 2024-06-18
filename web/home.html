@@ -1,110 +1,196 @@
 <!DOCTYPE html>
 <html lang="PT-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="" type="image/x-icon">
     <link rel="stylesheet" href="index.css">
-    <title>HOME</title>
+    <title>TT-STORE</title>
 </head>
+
 <body>
     <header>
-        <img class="logo" src="" alt="Logo">
-        <!-- Botão de abertura da barra lateral -->
+        <img class="logo" src="logo.png" alt="Logo">
         <button class="nav-toggle" onclick="toggleNav()">Menu</button>
         <nav class="nav-bar">
             <ul class="nav-links">
-                <a class="links" href="#sessao-inicio">
-                    <li>HOME</li>
-                </a>
-                <a class="links" href="#sessao-quemSomos">
-                    <li>NIKE</li>
-                </a>
-                <a class="links" href="#sessao-quemSomos">
-                    <li>ADIDAS</li>
-                </a>
-                <a class="links" href="#sessao-quemSomos">
-                    <li>VANS</li>
-                </a>
-                <a class="links" href="#sessao-quemSomos">
-                    <li>JORDAN</li>
-                </a>
-                <a class="links" href="#sobre-mim">
-                    <li>PUMA</li>
-                </a>
-                <a class="links" href="simulador.html">
-                    <li>CONVERSE</li>
-                </a>
-                <a class="links" href="#rodape">
-                    <li>NEW BALANCE</li>
-                </a>
+                <li><a class="links" href="#sessao-inicio">HOME</a></li>
+                <li><a class="links" href="#sessao-nike">NIKE</a></li>
+                <li><a class="links" href="#sessao-adidas">ADIDAS</a></li>
+                <li><a class="links" href="#sessao-vans">VANS</a></li>
+                <li><a class="links" href="#sessao-jordan">JORDAN</a></li>
+                <li><a class="links" href="#sessao-puma">PUMA</a></li>
+                <li><a class="links" href="simulador.html">CONVERSE</a></li>
+                <li><a class="links" href="#sessao-newBalance">NEW BALANCE</a></li>
             </ul>
             <ul class="nav-auth">
-                <a class="links" href="cadastro.html">
-                    <li class="cadastroLogin">CARRINHO</li>
-                </a>
-                <a class="links" href="login.html">
-                    <li class="cadastroLogin">LOGIN</li>
-                </a>
+                <li class="buscar" onclick="buscar()"><img src="lupa.png" alt=""></li>
+                <li class="carrinho"><a class="links" href="cadastro.html"><img
+                            src="carrinho-de-compras-de-design-xadrez.png" alt=""></a></li>
+                <li class="favoritos"><a class="links" href="login.html"><img src="adicionar-aos-favoritos.png"
+                            alt=""></a></li>
+                <li class="cadastroLogin"><a class="links" href="login.html"><img src="do-utilizador.png" alt=""></a>
+                </li>
             </ul>
         </nav>
     </header>
-
+    <div class="barraPesquisa" id="barraPesquisa">
+        <input type="text" id="searchInput" placeholder="Digite o termo de busca">
+        <button onclick="buscar()">Buscar</button>
+        <ul id="resultados"></ul>
+    </div>
     <section class="sessao-inicio" id="sessao-inicio">
         <div class="carousel-container">
             <div class="carousel">
-                <div class="carousel-item">
-                    <img src="adidas_samba.png" alt="Foto principal">
-                </div>
-                <div class="carousel-item">
-                    <img src="force_purple.png" alt="Foto principal">
-                </div>
-                <div class="carousel-item">
-                    <img src="namorados-nike-desk.jpg" alt="Foto principal">
-                </div>
-                <div class="carousel-item">
-                    <img src="vans.png" alt="Foto principal">
-                </div>
+                <div class="carousel-item"><img src="adidas_samba.png" alt="Adidas Samba"></div>
+                <div class="carousel-item"><img src="force_purple.png" alt="Force Purple"></div>
+                <div class="carousel-item"><img src="namorados-nike-desk.jpg" alt="Nike Love"></div>
+                <div class="carousel-item"><img src="vans.png" alt="Vans"></div>
             </div>
+            <button class="carousel-button prev" onclick="moveCarousel(-1)">&#10094;</button>
+            <button class="carousel-button next" onclick="moveCarousel(1)">&#10095;</button>
         </div>
     </section>
+    <section class="sessao-novidades" id="sessao-novidades">
+        <div class="box-start">
+            <h1 class="drop">Drops Disponiveis</h1>
+        </div>
+        <div class="box-end"></div>
 
-    <section class="sessao-quemSomos" id="sessao-quemSomos">
-        <!-- Conteúdo da seção sobre o projeto -->
+        <div class="div-independente-1">
+            <div class="box-start01">
+                <img src="/brand-puma.png" alt="" class="logo-puma">
+            </div>
+            <div class="box-end01">
+                <p class="nome_produto1"> <b>Tênis Puma Suede XI
+                        Unissex</b></p>
+                <p class="preco_produto1"><b>
+                    R$ 349,90</b></p>
+                    <p class="parcs-produto1">
+                        10X R$ 34,90
+                    </p>
+            </div>
+            <img src="/produtos/puma/Tenis_Puma_Suede_Black.png" alt="Imagem independente 1" class="img-indenp1">
+        </div>
+
+        <div class="div-independente-2">
+            <div class="box-start02">
+                <img src="/brand-puma.png" alt="" class="logo-puma">
+            </div>
+            <div class="box-end02">
+                <p class="nome_produto2"> <b>Tênis Puma Suede XI
+                    Unissex</b></p>
+            <p class="preco_produto2"><b>
+                R$ 349,90</b></p>
+                <p class="parcs-produto1">
+                    10X R$ 34,90
+                </p>
+            </div>
+
+            <img src="/produtos/puma/Tenis_Puma_Suede_Red.png" alt="Imagem independente 2" class="img-indenp2">
+            
+        </div>
+        <div class="div-independente-3">
+            <div class="box-start03">
+                <img src="/brand-puma.png" alt="" class="logo-puma">
+            </div>
+            <div class="box-end03">
+                <p class="nome_produto3"> <b>Tênis Puma 180 Staple
+                    Unissex</b></p>
+            <p class="preco_produto3"><b>
+                R$ 699,99</b></p>
+                <p class="parcs-produto1">
+                    10X R$ 69,99
+                </p>
+            </div>
+            <img src="/produtos/puma/Tenis_Puma_180_Staple.png" alt="Imagem independente 3" class="img-indenp3">
+        </div>
+        <div class="div-independente-4">
+            <div class="box-start04">
+                <img src="/brand-puma.png" alt="" class="logo-puma">
+            </div>
+            <div class="box-end04">
+                <p class="nome_produto4"> <b>Tênis Puma 180
+                    Unissex</b></p>
+            <p class="preco_produto4"><b>
+                R$ 799,99</b></p>
+                <p class="parcs-produto1">
+                    10X R$ 79,99
+                </p>
+            </div>
+            <img src="/produtos/puma/Tenis_Puma_180_Unissex.png"
+                alt="Imagem independente 4" class="img-indenp4">
+        </div>
     </section>
-  
-    
-</body>
-</html>
-<script>
-    // Função para alternar a classe da barra de navegação em telas menores
-    function toggleNav() {
-        var navBar = document.querySelector('.nav-bar');
-        navBar.classList.toggle('nav-open');
-    }
-
-    // Função para o carrossel de imagens
-    let currentIndex = 0;
-    function showCarouselItem(index) {
-        const items = document.querySelectorAll('.carousel-item');
-        if (index >= items.length) currentIndex = 0;
-        if (index < 0) currentIndex = items.length - 1;
-        for (let i = 0; i < items.length; i++) {
-            items[i].style.display = 'none';
+    <section id="sessao-marcas" class="sessao-marcas">
+        <div class="box-marca-1"><img class="marca1" src="/brand-nike-icon-256x89-ps8h00z7.png" alt="Marca 1"></div>
+        <div class="box-marca-2"><img src="marca-2.png" alt="Marca 2"></div>
+        <div class="box-marca-3"><img src="marca-3.png" alt="Marca 3"></div>
+        <div class="box-marca-4"><img src="marca-4.png" alt="Marca 4"></div>
+        <div class="box-marca-5"><img src="marca-5.png" alt="Marca 5"></div>
+    </section>
+    <section id="sessao-tamanho" class="sessao-tamanho">
+        <div class="box-tamanho-esquerdo">
+            <h2>MASCULINO</h2>
+            <ul>
+                <li>38</li>
+                <li>39</li>
+                <li>40</li>
+                <li>41</li>
+                <li>42</li>
+            </ul>
+        </div>
+    </section>
+    <section id="sessao-email" class="sessao-email">
+        <!-- Email section content -->
+    </section>
+    <section id="sessao-footer" class="sessao-footer">
+        <!-- Footer section content -->
+    </section>
+    <script>
+        function toggleNav() {
+            var navBar = document.querySelector('.nav-bar');
+            navBar.classList.toggle('nav-open');
         }
-        items[currentIndex].style.display = 'block';
-    }
 
-    function moveCarousel(step) {
-        currentIndex += step;
+        let currentIndex = 0;
+        function showCarouselItem(index) {
+            const items = document.querySelectorAll('.carousel-item');
+            if (index >= items.length) currentIndex = 0;
+            if (index < 0) currentIndex = items.length - 1;
+            for (let i = 0; i < items.length; i++) {
+                items[i].style.display = 'none';
+            }
+            items[currentIndex].style.display = 'block';
+        }
+
+        function moveCarousel(step) {
+            currentIndex += step;
+            showCarouselItem(currentIndex);
+        }
+
         showCarouselItem(currentIndex);
-    }
 
-    // Inicializa o carrossel
-    showCarouselItem(currentIndex);
+        setInterval(() => {
+            moveCarousel(1);
+        }, 5000);
 
-    // Configura o carrossel para mudar automaticamente a cada 5 segundos
-    setInterval(() => {
-        moveCarousel(1);
-    }, 5000);
-</script>
+        function buscar() {
+            const termoBusca = document.getElementById('searchInput').value.toLowerCase();
+            const listaResultados = document.getElementById('resultados');
+            document.getElementById('barraPesquisa').style.display = "block";
+            listaResultados.innerHTML = '';
+            const dados = ["Nike", "Adidas", "Vans", "Jordan", "Puma", "Converse", "New Balance"];
+            dados.forEach(item => {
+                if (item.toLowerCase().includes(termoBusca)) {
+                    const resultado = document.createElement('li');
+                    resultado.textContent = item;
+                    listaResultados.appendChild(resultado);
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

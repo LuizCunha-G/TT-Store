@@ -20,8 +20,10 @@ body {
 /* Cabeçalho */
 header {
     width: 100%;
-    height: 10%;
-    background: rgba(14, 1, 39, 0.493);
+    height: 12%;
+    position: fixed;
+    top: 0;
+    background: rgb(0, 0, 0);
     backdrop-filter: blur(19.5px);
     display: flex;
     align-items: center;
@@ -41,11 +43,22 @@ header {
 .nav-bar {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    /* background-color: red; */
+    width: 100%;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aqua; */
+    margin-left: 6%;
+    gap: 2%;
 }
 
 .nav-links a {
@@ -56,13 +69,18 @@ header {
 }
 
 .nav-links a:hover {
-    border-bottom: 2px solid #68228B;
+    border-bottom: 2px solid #ffffff;
     padding-bottom: 8px;
 }
 
 .nav-auth {
     display: flex;
     list-style: none;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+    margin-right: -3%;
+    /* background-color: green; */
 }
 
 .nav-auth a {
@@ -75,6 +93,18 @@ header {
 .nav-auth a:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
+
+.barraPesquisa {
+    display: none;
+    background-color: #fff;
+    color: black;
+    width: 230px;
+    position: fixed;
+    border-radius: 4px;
+    border: #e6005a 3px solid;
+    padding: 10px;
+    margin-right: 10%;
+  }
 
 /* Seções */
 section {
@@ -91,13 +121,6 @@ section {
     background-size: cover;
 }
 
-.sessao-quemSomos {
-    background: #110531;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 .foto-principal {
     display: flex;
@@ -108,8 +131,8 @@ section {
 }
 
 .foto {
-    width: 80%;
-    height: 80%;
+    width: 100%;
+    height: 60%;
     object-fit: cover;
 }
 
@@ -119,26 +142,54 @@ section {
     height: 100%;
     max-height: 100%;
     width: 100%;
-    max-width: 1290px;
+    max-width: 1400px;
     margin-top: -8%;
-    margin-bottom: 5%; 
+    margin-bottom: 0.2%; 
     overflow: hidden;
 }
 
 .carousel {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 1s ease-in-out;
 }
 
 .carousel-item {
     min-width: 100%;
-    transition: 0.5s;
+    transition: 1s;
 }
 
 .carousel-item img {
     width: 100%;
     display: block;
 }
+.carousel-button {
+    position: absolute;
+    top: 30%;
+    width: auto;
+    padding: 16px;
+    /* margin-top: -22px; */
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0); /* Fundo semi-transparente */
+    width: 6%;
+    height: 30%;
+    border: none;
+}
+
+.carousel-button.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.055);
+}
+
 
 /* Texto padrão */
 p {
@@ -146,6 +197,568 @@ p {
     margin-top: 20px;
     color: #a09a9a;
 }
+
+/* Estilo geral da seção sessao-novidades */
+.sessao-novidades {
+    background: #00000000;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha os itens à esquerda */
+    height: 100vh; /* Altura total da tela */
+    max-height: 100vh; /* Altura máxima da tela */
+  }
+  
+  /* Estilo da div box-start */
+  .box-start {
+    background: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha os itens à esquerda */
+    width: 100%; /* Largura de 50% */
+    height: 100%; /* Altura total da seção */
+    top: auto;
+    margin-top: -10%;
+  }
+  .drop{
+    margin-top: 2%;
+    margin-left: 3%;
+    font-size: 40px;
+    font-family:sans-serif;
+    color: #fff;
+  }
+  
+  /* Estilo da div box-end */
+  .box-end {
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Alinha os itens à direita */
+    width: 100%; /* Largura de 50% */
+    height: 92%; /* Altura total da seção */
+  }
+  
+  .logo-puma{
+    height: 100%;
+    max-height: 55px;
+    width: 100%;
+    max-width: 50px;
+    margin: 7px 10px 7px;
+  }
+
+  .nome_produto1{
+    font-size: 14px;
+    color: #000000;
+    text-decoration: solid;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 18%;
+    margin-right: 15%;
+    margin-bottom: 2.5%;
+    width: 180px;
+  }
+
+  .preco_produto1{
+    font-size: 14px;
+    color: #000000;
+    text-decoration: solid;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%; 
+    margin-right: 15%;
+    width: 180px;
+  }
+
+  .parcs-produto1{
+    font-size: 10px;
+    color: #000000;
+    text-decoration: solid;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%; 
+    margin-right: 15%;
+    width: 180px;
+  }
+/* Estilo das divs independentes */
+.div-independente-1{
+    background-color: #1d1b1b; /* Cor de fundo */
+    margin: 10px; /* Margem entre as divs */
+    padding: 20px; /* Espaçamento interno das divs */
+    /* border-radius: 10px; Arredondamento dos cantos */
+    width: 20%; /* Largura de cada div (ajuste conforme desejado) */
+    height: 45%; /* Altura automática */
+    text-align: center; /* Alinha o texto no centro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin-left: 2%;
+    
+    
+}
+.box-start01 {
+    background: #246e5c;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha os itens à esquerda */
+    width: 118%; /* Largura de 50% */
+    height: 130%; /* Altura total da seção */
+    margin-top: -8%;
+    
+  }
+  
+  /* Estilo da div box-end */
+  .box-end01 {
+    background: #e9e3e3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Alinha os itens à direita */
+    width: 118%; /* Largura de 50% */
+    height: 118%; /* Altura total da seção */
+    margin-bottom: -8.5%;
+  }
+  .img-indenp1{
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+  }
+  
+.div-independente-2{
+    background-color: #1d1b1b; /* Cor de fundo */
+    margin: 10px; /* Margem entre as divs */
+    padding: 20px; /* Espaçamento interno das divs */
+    border-radius: 10px; /* Arredondamento dos cantos */
+    width: 20%; /* Largura de cada div (ajuste conforme desejado) */
+    height: 45%; /* Altura automática */
+    text-align: center; /* Alinha o texto no centro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin-left: 28%;
+}
+
+.box-start02 {
+    background: #ca2a44;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha os itens à esquerda */
+    width: 118%; /* Largura de 50% */
+    height: 130%; /* Altura total da seção */
+    margin-top: -8%;
+    
+  }
+
+  
+  /* Estilo da div box-end */
+  .box-end02 {
+    background: #e9e3e3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Alinha os itens à direita */
+    width: 118%; /* Largura de 50% */
+    height: 118%; /* Altura total da seção */
+    margin-bottom: -8.5%;
+  }
+  .img-indenp2{
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+  }
+  .nome_produto2{
+    font-size: 14px;
+    color: #000000;
+    text-decoration: solid;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 18%;
+    margin-right: 15%;
+    margin-bottom: 2.5%;
+    width: 180px;
+  }
+
+  .preco_produto2{
+    font-size: 14px;
+    color: #000000;
+    text-decoration: solid;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%; 
+    margin-right: 15%;
+    width: 180px;
+  }
+
+.div-independente-3{
+    background-color: #1d1b1b; /* Cor de fundo */
+    margin: 10px; /* Margem entre as divs */
+    padding: 20px; /* Espaçamento interno das divs */
+    border-radius: 10px; /* Arredondamento dos cantos */
+    width: 20%; /* Largura de cada div (ajuste conforme desejado) */
+    height: 45%; /* Altura automática */
+    text-align: center; /* Alinha o texto no centro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin-left: 53%;
+}
+
+.box-start03 {
+    background: #caa980;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha os itens à esquerda */
+    width: 118%; /* Largura de 50% */
+    height: 130%; /* Altura total da seção */
+    margin-top: -8%;
+    
+  }
+
+  
+  /* Estilo da div box-end */
+  .box-end03 {
+    background: #e9e3e3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Alinha os itens à direita */
+    width: 118%; /* Largura de 50% */
+    height: 118%; /* Altura total da seção */
+    margin-bottom: -8.5%;
+  }
+  .img-indenp3{
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+  }
+
+  .nome_produto3{
+    font-size: 14px;
+    color: #000000;
+    text-decoration: solid;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 18%;
+    margin-right: 15%;
+    margin-bottom: 2.5%;
+    width: 180px;
+  }
+
+  .preco_produto3{
+    font-size: 14px;
+    color: #000000;
+    text-decoration: solid;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%; 
+    margin-right: 15%;
+    width: 180px;
+  }
+.div-independente-4 {
+  background-color: #1d1b1b; /* Cor de fundo */
+  margin: 10px; /* Margem entre as divs */
+  padding: 20px; /* Espaçamento interno das divs */
+  border-radius: 10px; /* Arredondamento dos cantos */
+  width: 20%; /* Largura de cada div (ajuste conforme desejado) */
+  height: 45%; /* Altura automática */
+  text-align: center; /* Alinha o texto no centro */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  margin-left: 78%;
+}
+
+.box-start04 {
+    background: #a87e4a;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha os itens à esquerda */
+    width: 118%; /* Largura de 50% */
+    height: 130%; /* Altura total da seção */
+    margin-top: -8%;
+    
+  }
+
+  
+
+  
+  /* Estilo da div box-end */
+  .box-end04 {
+    background: #e9e3e3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Alinha os itens à direita */
+    width: 118%; /* Largura de 50% */
+    height: 118%; /* Altura total da seção */
+    margin-bottom: -8.5%;
+  }
+  .img-indenp4{
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+  }
+
+  .nome_produto4{
+    font-size: 14px;
+    color: #000000;
+    text-decoration: solid;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 18%;
+    margin-right: 21.5%;
+    margin-bottom: 2.5%;
+    width: 150px;
+  }
+
+  .preco_produto4{
+    font-size: 14px;
+    color: #000000;
+    text-decoration: solid;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%; 
+    margin-right: 15%;
+    width: 180px;
+  }
+
+/* Estilo da imagem dentro das divs independentes */
+.div-independente-1 img{
+    width: 100%; /* Largura total da imagem */
+  height: auto; /* Altura automática */
+  object-fit: cover; /* Mantém a proporção da imagem, cobrindo todo o espaço disponível */
+}
+.div-independente-2 img{
+    width: 100%; /* Largura total da imagem */
+  height: auto; /* Altura automática */
+  object-fit: cover; /* Mantém a proporção da imagem, cobrindo todo o espaço disponível */
+}
+.div-independente-3 img{
+    width: 100%; /* Largura total da imagem */
+  height: auto; /* Altura automática */
+  object-fit: cover; /* Mantém a proporção da imagem, cobrindo todo o espaço disponível */
+}
+.div-independente-4 img {
+  width: 100%; /* Largura total da imagem */
+  height: auto; /* Altura automática */
+  object-fit: cover; /* Mantém a proporção da imagem, cobrindo todo o espaço disponível */
+}
+
+.sessao-marcas {
+    background: #290429; /* Cor de fundo */
+    margin: auto; /* Margem automática */
+    display: flex; /* Ativa flexbox */
+    flex-direction: row; /* Organização em coluna */
+    align-items: center; /* Alinha itens no centro */
+    height: 50vh; /* Altura da tela (50%) */
+    max-height: 100vh; /* Altura máxima (tela cheia) */
+    justify-content: space-around; /* Distribui espaço entre as marcas */
+  }
+
+  /* Estilo das divs de marca */
+.box-marca-1{
+    display: flex; /* Ativa flexbox */
+    align-items: center; /* Alinha itens no centro */
+    width: 200px;
+    height: 200px;
+    margin-top: 20px; /* Margem superior */
+    border: #000000 1px solid;
+    background: #141414;
+    border-radius: 50%;
+    justify-content: center;
+    margin-bottom: 10%;
+}
+.box-marca-2{
+    display: flex; /* Ativa flexbox */
+    align-items: center; /* Alinha itens no centro */
+    width: 200px;
+    height: 200px;
+    margin-top: 20px; /* Margem superior */
+    border: #000000 1px solid;
+    background: #141414;
+    border-radius: 50%;
+    justify-content: center;
+    margin-bottom: 10%;
+}
+.box-marca-3{
+    display: flex; /* Ativa flexbox */
+    align-items: center; /* Alinha itens no centro */
+    width: 200px;
+    height: 200px;
+    margin-top: 20px; /* Margem superior */
+    border: #000000 1px solid;
+    background: #141414;
+    border-radius: 50%;
+    justify-content: center;
+    margin-bottom: 10%;
+}
+.box-marca-4{
+    display: flex; /* Ativa flexbox */
+    align-items: center; /* Alinha itens no centro */
+    width: 200px;
+    height: 200px;
+    margin-top: 20px; /* Margem superior */
+    border: #000000 1px solid;
+    background: #141414;
+    border-radius: 50%;
+    justify-content: center;
+    margin-bottom: 10%;
+}
+.box-marca-5 {
+    display: flex; /* Ativa flexbox */
+    align-items: center; /* Alinha itens no centro */
+    width: 200px;
+    height: 200px;
+    margin-top: 20px; /* Margem superior */
+    border: #000000 1px solid;
+    background: #141414;
+    border-radius: 50%;
+    justify-content: center;
+    margin-bottom: 10%;
+}
+
+/* Estilo da imagem dentro das divs de marca */
+.box-marca-1 img{
+    width: 100%; /* Largura total da imagem */
+    height: auto; /* Altura automática */
+    object-fit: contain; /* Mantém a proporção da imagem dentro da div */
+}
+
+.marca1{
+  height: 50vh;
+  width: 80vw;
+}
+.box-marca-2 img{
+    width: 100%; /* Largura total da imagem */
+    height: auto; /* Altura automática */
+    object-fit: contain; /* Mantém a proporção da imagem dentro da div */
+}
+.box-marca-3 img{
+    width: 100%; /* Largura total da imagem */
+    height: auto; /* Altura automática */
+    object-fit: contain; /* Mantém a proporção da imagem dentro da div */
+}
+.box-marca-4 img{
+    width: 100%; /* Largura total da imagem */
+    height: auto; /* Altura automática */
+    object-fit: contain; /* Mantém a proporção da imagem dentro da div */
+}
+.box-marca-5 img{
+  width: 100%; /* Largura total da imagem */
+  height: auto; /* Altura automática */
+  object-fit: contain; /* Mantém a proporção da imagem dentro da div */
+}
+
+.sessao-tamanho {
+    background: #F6EDE7; /* Cor de fundo */
+    margin: auto; /* Margem automática */
+    display: flex; /* Ativa flexbox */
+    flex-direction: row; /* Organização em coluna */
+    align-items: flex-start; /* Alinha itens no centro */
+    height: 70vh; /* Altura da tela (50%) */
+    max-height: 100vh; /* Altura máxima (tela cheia) */
+    justify-content: space-around; /* Distribui espaço entre as marcas */
+  }
+
+  /* Estilo das divs de tamanho */
+.box-tamanho-esquerdo,
+.box-tamanho-direito {
+  display: flex; /* Ativa flexbox */
+  flex-direction: column; /* Organização em coluna */
+  width: 50%; /* Largura de cada div (50%) */
+  margin-right: 20px; /* Margem à direita */
+}
+
+/* Estilo dos títulos (h2) */
+.box-tamanho-esquerdo h2,
+.box-tamanho-direito h2 {
+  font-size: 24px; /* Tamanho da fonte */
+  text-align: start; /* Alinhamento centralizado */
+  margin-bottom: 20px; /* Margem inferior */
+}
+
+/* Estilo das listas (ul) */
+.box-tamanho-esquerdo ul,
+.box-tamanho-direito ul {
+  list-style: none; /* Remove marcadores de lista */
+  padding: 0; /* Espaçamento interno zero */
+}
+
+/* Estilo dos itens da lista (li) */
+.box-tamanho-esquerdo li,
+.box-tamanho-direito li {
+  text-align: center; /* Alinhamento centralizado */
+  font-size: 18px; /* Tamanho da fonte */
+  margin-bottom: 10px; /* Margem inferior */
+}
+
+#seletorTamanho {
+    display: none; /* Hide the default select */
+  }
+
+  .dropdown-container {
+    position: relative; /* Enable positioning for child elements */
+    width: 100px; /* Adjust width as needed */
+    height: 30px; /* Adjust height as needed */
+    border: 1px solid #ccc; /* Example border */
+    padding: 5px; /* Example padding */
+    background-color: #fff; /* Example background color */
+    cursor: pointer; /* Indicate clickable area */
+  }
+
+  .dropdown-container .selected-option {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px; /* Adjust left padding as needed */
+    font-weight: bold; /* Example styling */
+  }
+
+  .dropdown-container::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px; /* Adjust right padding as needed */
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #ccc; /* Example arrow color */
+    pointer-events: none; /* Prevent arrow from being clickable */
+  }
+  .sessao-email {
+    background: #290429; /* Cor de fundo */
+    margin: auto; /* Margem automática */
+    display: flex; /* Ativa flexbox */
+    flex-direction: row; /* Organização em coluna */
+    align-items: center; /* Alinha itens no centro */
+    height: 45vh; /* Altura da tela (50%) */
+    max-height: 100vh; /* Altura máxima (tela cheia) */
+    justify-content: space-around; /* Distribui espaço entre as marcas */
+  }
+  .sessao-footer {
+    background: #000000; /* Cor de fundo */
+    margin: auto; /* Margem automática */
+    display: flex; /* Ativa flexbox */
+    flex-direction: row; /* Organização em coluna */
+    align-items: center; /* Alinha itens no centro */
+    height: 60vh; /* Altura da tela (50%) */
+    max-height: 100vh; /* Altura máxima (tela cheia) */
+    justify-content: space-around; /* Distribui espaço entre as marcas */
+  }
 
 /* Media Queries para Responsividade */
 @media (max-width: 768px) {
