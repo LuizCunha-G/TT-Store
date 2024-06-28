@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="PT-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,381 +7,252 @@
     <link rel="stylesheet" href="index.css">
     <title>TT-STORE</title>
 </head>
-
 <body>
-    <header>
+
+    <!-- Apenas o nav é necessário para navegação entre páginas -->
+    <nav>
         <img class="logo" src="logo.png" alt="Logo">
         <button class="nav-toggle" onclick="toggleNav()">Menu</button>
-        <nav class="nav-bar">
-            <ul class="nav-links">
-                <li><a class="links" href="#sessao-inicio">HOME</a></li>
-                <li><a class="links" href="#sessao-nike">NIKE</a></li>
-                <li><a class="links" href="#sessao-adidas">ADIDAS</a></li>
-                <li><a class="links" href="#sessao-vans">VANS</a></li>
-                <li><a class="links" href="#sessao-jordan">JORDAN</a></li>
-                <li><a class="links" href="#sessao-puma">PUMA</a></li>
-                <li><a class="links" href="simulador.html">CONVERSE</a></li>
-                <li><a class="links" href="#sessao-newBalance">NEW BALANCE</a></li>
-            </ul>
-            <ul class="nav-auth">
-                <li class="buscar" onclick="buscar()"><img src="/images/lupa.png" alt=""></li>
-                <li class="carrinho"><a class="links" href="/images/do-utilizador.png"><img
-                            src="/images/carrinho-de-compras-de-design-xadrez.png" alt=""></a></li>
-                <li class="favoritos"><a class="links" href="login.html"><img src="/images/adicionar-aos-favoritos.png"
-                            alt=""></a></li>
-                <li class="cadastroLogin"><a class="links" href="login.html"><img src="/images/do-utilizador.png" alt=""></a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+        <ul class="nav-links">
+            <li><a class="links" href="#sessao-inicio">HOME</a></li>
+            <li><a class="links" href="#sessao-nike">NIKE</a></li>
+            <li><a class="links" href="#sessao-adidas">ADIDAS</a></li>
+            <li><a class="links" href="#sessao-vans">VANS</a></li>
+            <li><a class="links" href="#sessao-jordan">JORDAN</a></li>
+            <li><a class="links" href="#sessao-puma">PUMA</a></li>
+            <li><a class="links" href="simulador.html">CONVERSE</a></li>
+            <li><a class="links" href="#sessao-newBalance">NB</a></li>
+        </ul>
+        <ul class="nav-auth">
+            <li class="buscar" onclick="buscar()"><img src="images/lupa.png"></li>
+            <li><a class="links" href="/images/do-utilizador.png"><img src="images/carrinho-de-compras-de-design-xadrez.png"></a></li>
+            <li><a class="links" href="login.html"><img src="images/adicionar-aos-favoritos.png"></a></li>
+            <li><a class="links" href="login.html"><img src="images/do-utilizador.png"></a></li>
+        </ul>
+    </nav>
+
     <div class="barraPesquisa" id="barraPesquisa">
         <input type="text" id="searchInput" placeholder="Digite o termo de busca">
         <button onclick="buscar()">Buscar</button>
         <ul id="resultados"></ul>
     </div>
-    <section class="sessao-inicio" id="sessao-inicio">
+
+    <section class="sessao-inicio">
         <div class="carousel-container">
             <div class="carousel">
-                <div class="carousel-item"><img src="/images/adidas_samba.png" alt="Adidas Samba"></div>
-                <div class="carousel-item"><img src="/images/force_purple.png" alt="Force Purple"></div>
-                <div class="carousel-item"><img src="/images/namorados-nike-desk.jpg" alt="Nike Love"></div>
-                <div class="carousel-item"><img src="/images/vans.png" alt="Vans"></div>
+                <div class="carousel-item"><img src="images/adidas_samba.png" alt="Adidas Samba"></div>
+                <div class="carousel-item"><img src="images/force_purple.png" alt="Force Purple"></div>
+                <div class="carousel-item"><img src="images/namorados-nike-desk.jpg" alt="Nike Love"></div>
+                <div class="carousel-item"><img src="images/vans.png" alt="Vans"></div>
             </div>
             <button class="carousel-button prev" onclick="moveCarousel(-1)">&#10094;</button>
             <button class="carousel-button next" onclick="moveCarousel(1)">&#10095;</button>
         </div>
     </section>
-    <section class="sessao-novidades" id="sessao-novidades">
-        <div class="box-start">
-            <h1 class="drop">Drops Disponiveis</h1>
-        </div>
-        <div class="box-end"></div>
 
-        <div class="div-independente-1">
-            <div class="box-start01">
-                <img src="images/brand-puma.png" alt="" class="logo-puma">
-            </div>
-            <div class="box-end01">
-                <p class="nome_produto1"> <b>Tênis Puma Suede XI
-                        Unissex</b></p>
-                <p class="preco_produto1"><b>
-                    R$ 349,90</b></p>
-                    <p class="parcs-produto1">
-                        10X R$ 34,90
-                    </p>
-            </div>
-            <img src="images/produtos/puma/Tenis_Puma_Suede_Black.png" alt="Imagem independente 1" class="img-indenp1">
-        </div>
-
-        <div class="div-independente-2">
-            <div class="box-start02">
-                <img src="images/brand-puma.png" alt="" class="logo-puma">
-            </div>
-            <div class="box-end02">
-                <p class="nome_produto2"> <b>Tênis Puma Suede XI
-                    Unissex</b></p>
-            <p class="preco_produto2"><b>
-                R$ 349,90</b></p>
-                <p class="parcs-produto1">
-                    10X R$ 34,90
-                </p>
-            </div>
-
-            <img src="images/produtos/puma/Tenis_Puma_Suede_Red.png" alt="Imagem independente 2" class="img-indenp2">
+    <section class="sessao-novidades">
+        <h2 class="drop">Drops Disponíveis</h2>
+        <div class="divFlex"> <!-- Div para alinhar os produtos horizontalmente -->
             
-        </div>
-        <div class="div-independente-3">
-            <div class="box-start03">
-                <img src="images/brand-puma.png" alt="" class="logo-puma">
-            </div>
-            <div class="box-end03">
-                <p class="nome_produto3"> <b>Tênis Puma 180 Staple
-                    Unissex</b></p>
-            <p class="preco_produto3"><b>
-                R$ 699,99</b></p>
-                <p class="parcs-produto1">
-                    10X R$ 69,99
-                </p>
-            </div>
-            <img src="images/produtos/puma/Tenis_Puma_180_Staple.png" alt="Imagem independente 3" class="img-indenp3">
-        </div>
-        <div class="div-independente-4">
-            <div class="box-start04">
-                <img src="images/brand-puma.png" alt="" class="logo-puma">
-            </div>
-            <div class="box-end04">
-                <p class="nome_produto4"> <b>Tênis Puma 180
-                    Unissex</b></p>
-            <p class="preco_produto4"><b>
-                R$ 799,99</b></p>
-                <p class="parcs-produto1">
-                    10X R$ 79,99
-                </p>
-            </div>
-            <img src="images/produtos/puma/Tenis_Puma_180_Unissex.png"
-                alt="Imagem independente 4" class="img-indenp4">
+            <!-- Os produtos possuem a mesma classe, mas diferentes IDs -->
+            <a class="linkProduto" id="produto01">
+                <article class="articleProduto">
+                    <header>                    
+                        <img src="images/brand-puma.png" class="imgMarca">
+                    </header>
+                    <div class="divImgProduto">
+                        <img src="images/produtos/puma/Tenis_Puma_Suede_Black.png">
+                    </div>
+                    <div class="divNomeProduto">
+                        <p>Tênis Puma Suede Xl Unissex</p>
+                    </div>
+                    <div class="precoProduto">
+                        <p class="precoAVista">R$ 349,90</p>
+                        <p class="precoParcelado">10x R$34,90</p>
+                    </div>
+                </article>
+            </a>
+            <a class="linkProduto" id="produto02">
+                <article class="articleProduto">
+                    <header>                    
+                        <img src="images/brand-puma.png" class="imgMarca">
+                    </header>
+                    <div class="divImgProduto">
+                        <img src="images/produtos/puma/Tenis_Puma_Suede_Red.png">
+                    </div>
+                    <div class="divNomeProduto">
+                        <p>Tênis Puma Suede Xl Unissex</p>
+                    </div>
+                    <div class="precoProduto">
+                        <p class="precoAVista">R$ 349,90</p>
+                        <p class="precoParcelado">10x R$34,90</p>
+                    </div>
+                </article>
+            </a>
+            <a class="linkProduto" id="produto03">
+                <article class="articleProduto">
+                    <header>                    
+                        <img src="images/brand-puma.png" class="imgMarca">
+                    </header>
+                    <div class="divImgProduto">
+                        <img src="images/produtos/puma/Tenis_Puma_180_Unissex.png">
+                    </div>
+                    <div class="divNomeProduto">
+                        <p>Tênis Puma Suede Xl Unissex</p>
+                    </div>
+                    <div class="precoProduto">
+                        <p class="precoAVista">R$ 349,90</p>
+                        <p class="precoParcelado">10x R$34,90</p>
+                    </div>
+                </article>
+            </a>
+            <a class="linkProduto" id="produto04">
+                <article class="articleProduto">
+                    <header>                    
+                        <img src="images/brand-puma.png" class="imgMarca">
+                    </header>
+                    <div class="divImgProduto">
+                        <img src="images/produtos/puma/Tenis_Puma_180_Lace_Wns_fem.png">
+                    </div>
+                    <div class="divNomeProduto">
+                        <p>Tênis Puma Suede Xl Unissex</p>
+                    </div>
+                    <div class="precoProduto">
+                        <p class="precoAVista">R$ 349,90</p>
+                        <p class="precoParcelado">10x R$34,90</p>
+                    </div>
+                </article>
+            </a>
         </div>
     </section>
-    <section id="sessao-marcas" class="sessao-marcas">
-        <div class="box-marca-1">
-            <img class="marcas_1" src="images/brand-nike-icon-256x89-ps8h00z7.png" alt="Marca 1">
-        </div>
-        <div class="box-marca-2">
-            <img src="/images/adidas-icon-256x159-um9gzu72.png" alt="Marca 2">
-        </div>
-        <div class="box-marca-3">
-            <img src="/images/brand-puma.png" alt="Marca 3">
-        </div>
-        <div class="box-marca-4">
-            <img src="/images/icon_jordan_brand.png" alt="Marca 4">
-        </div>
-        <div class="box-marca-5">
-            <img src="/images/icon_vans.png" alt="Marca 5">
-        </div>
+
+    <section class="sessao-marcas">
+        <div class="divFlex"> <!-- Div para alinhar as marcas horizontalmente -->
+            <a class="linkMarca">
+                <div class="divMarca">
+                    <img src="images/brand-nike-icon-256x89-ps8h00z7.png">
+                </div>
+            </a>
+            <a class="linkMarca">
+                <div class="divMarca">
+                    <img src="images/adidas-icon-256x159-um9gzu72.png">
+                </div>
+            </a>
+            <a class="linkMarca">
+                <div class="divMarca">
+                    <img src="images/brand-puma.png">
+                </div>
+            </a>
+            <a class="linkMarca">
+                <div class="divMarca">
+                    <img src="images/icon_jordan_brand.png">
+                </div>
+            </a>
+            <a class="linkMarca">
+                <div class="divMarca">
+                    <img src="images/icon_vans.png">
+                </div>
+            </a>
+        </div>        
     </section>
-    <section id="sessao-tamanho" class="sessao-tamanho">
-        <div class="box-tamanho-esquerdo">
-            <h2>MASCULINO</h2>
-            
-            <ul>
-                <li class="num-38" onclick="tam38()">38</li>
-                <li class="num-39" onclick="tam39()">39</li>
-                <li class="num-40" onclick="tam40()">40</li>
-                <li class="num-41" onclick="tam41()">41</li>
-                <li class="num-42" onclick="tam42()">42</li>
-                <li class="num-43" onclick="tam43()">43</li>
-                <li class="num-44" onclick="tam44()">44</li>
-                <li class="num-45" onclick="tam45()">45</li>
-            </ul>
-           
-        </div>
-        <div class="box-tamanho-direito" id="conjunto-imagens">
-            <div class="box_boot1">
-              <img src="/images/produtos/Tamanhos/45/229172-368-450.png" alt="">
-              <div class="heart">
-                <img src="/images/heart_icon.png" alt="Heart Icon">
-              </div>
-              <div class="">
-                <p class="nome_produto_tam"> <b>Tênis Puma 180
-                    Unissex</b></p>
-            <p class="preco_produto_tam"><b>
-                R$ 799,99</b></p>
-                <p class="parcs-produto1">
-                    10X R$ 79,99
-                </p>
+
+    <section class="sessao-tamanho">        
+        <h2>MASCULINO</h2>
+        <div class="divFlexTamanho">
+            <div class="box-tamanho-esquerdo">        
+                <ul>
+                    <li class="num-38" onclick="tam38()">38</li>
+                    <li class="num-39" onclick="tam39()">39</li>
+                    <li class="num-40" onclick="tam40()">40</li>
+                    <li class="num-41" onclick="tam41()">41</li>
+                    <li class="num-42" onclick="tam42()">42</li>
+                    <li class="num-43" onclick="tam43()">43</li>
+                    <li class="num-44" onclick="tam44()">44</li>
+                    <li class="num-45" onclick="tam45()">45</li>
+                </ul>           
             </div>
-              <div class="overlay">
-                <button>ADICIONAR</button>
-              </div>
+            <div class="box-tamanho-direito" id="conjunto-imagens">
+
+                <!-- Os produtos possuem a mesma classe, mas diferentes IDs -->
+                <article class="articleBoot" id="box_boot1">
+                    <div class="heart">
+                        <img src="images/heart_icon.png">
+                    </div>
+                    <div class="divImgProduto">                        
+                        <img src="images/produtos/Tamanhos/45/229172-368-450.png">
+                    </div>
+                    <div class="divNomeProduto">
+                        <p>Tênis Puma 180 Unissex</p>
+                    </div>
+                    <div class="precoProduto">
+                        <p class="precoAVista">R$ 799,99</p>
+                        <p class="precoParcelado"> 10X R$ 79,99</p>
+                    </div>
+                    <div class="overlay">
+                        <button>ADICIONAR</button>
+                    </div>
+                </article>
+                <article class="articleBoot" id="box_boot2">
+                    <div class="heart">
+                        <img src="images/heart_icon.png">
+                    </div>
+                    <div class="divImgProduto">                        
+                        <img src="images/produtos/Tamanhos/45/440632-368-450.png">
+                    </div>
+                    <div class="divNomeProduto">
+                        <p>Tênis Puma 180 Unissex</p>
+                    </div>
+                    <div class="precoProduto">
+                        <p class="precoAVista">R$ 799,99</p>
+                        <p class="precoParcelado"> 10X R$ 79,99</p>
+                    </div>
+                    <div class="overlay">
+                        <button>ADICIONAR</button>
+                    </div>
+                </article>
+                <article class="articleBoot" id="box_boot3">
+                    <div class="heart">
+                        <img src="images/heart_icon.png">
+                    </div>
+                    <div class="divImgProduto">                        
+                        <img src="images/produtos/Tamanhos/45/394254-368-450.png">
+                    </div>
+                    <div class="divNomeProduto">
+                        <p>Tênis Puma 180 Unissex</p>
+                    </div>
+                    <div class="precoProduto">
+                        <p class="precoAVista">R$ 799,99</p>
+                        <p class="precoParcelado"> 10X R$ 79,99</p>
+                    </div>
+                    <div class="overlay">
+                        <button>ADICIONAR</button>
+                    </div>
+                </article>
+                <article class="articleBoot" id="box_boot4">
+                    <div class="heart">
+                        <img src="images/heart_icon.png">
+                    </div>
+                    <div class="divImgProduto">                        
+                        <img src="images/produtos/Tamanhos/45/433279-368-450.png">
+                    </div>
+                    <div class="divNomeProduto">
+                        <p>Tênis Puma 180 Unissex</p>
+                    </div>
+                    <div class="precoProduto">
+                        <p class="precoAVista">R$ 799,99</p>
+                        <p class="precoParcelado"> 10X R$ 79,99</p>
+                    </div>
+                    <div class="overlay">
+                        <button>ADICIONAR</button>
+                    </div>
+                </article>
             </div>
-            <div class="box_boot2">
-              <img src="/images/produtos/Tamanhos/45/394254-368-450.png" alt="">
-              <div class="heart">
-                <img src="/images/heart_icon.png" alt="Heart Icon">
-              </div>
-              <div class="overlay">
-                <button>ADICIONAR</button>
-              </div>
-            </div> 
-            <div class="box_boot3">
-              <img src="/images/produtos/Tamanhos/45/433279-368-450.png" alt="">
-              <div class="heart">
-                <img src="/images/favorito.png" alt="Heart Icon">
-              </div>
-              <div class="overlay">
-                <button>ADICIONAR</button>
-              </div>
-            </div>
-            <div class="box_boot4">
-              <img src="/images/produtos/Tamanhos/45/440632-368-450.png" alt="">
-              <div class="heart">
-                <img src="/images/heart_icon.png" alt="Heart Icon">
-              </div>
-              <div class="overlay">
-                <button>ADICIONAR</button>
-              </div>
-            </div>
-          </div>
-          
+        </div>             
     </section>
-    <section id="sessao-email" class="sessao-email">
-        <!-- Email section content -->
-    </section>
-    <section id="sessao-footer" class="sessao-footer">
-        <!-- Footer section content -->
-    </section>
-    <script>
-        function toggleNav() {
-            var navBar = document.querySelector('.nav-bar');
-            navBar.classList.toggle('nav-open');
-        }
 
-        let currentIndex = 0;
-        function showCarouselItem(index) {
-            const items = document.querySelectorAll('.carousel-item');
-            if (index >= items.length) currentIndex = 0;
-            if (index < 0) currentIndex = items.length - 1;
-            for (let i = 0; i < items.length; i++) {
-                items[i].style.display = 'none';
-            }
-            items[currentIndex].style.display = 'block';
-        }
-
-        function moveCarousel(step) {
-            currentIndex += step;
-            showCarouselItem(currentIndex);
-        }
-
-        showCarouselItem(currentIndex);
-
-        setInterval(() => {
-            moveCarousel(1);
-        }, 5000);
-
-        function tam38() {
-    atualizarImagens(38);
-}
-
-function tam39() {
-    atualizarImagens(39);
-}
-
-function tam40() {
-    atualizarImagens(40);
-}
-
-function tam41() {
-    atualizarImagens(41);
-}
-
-function tam42() {
-    atualizarImagens(42);
-}
-
-function tam43() {
-    atualizarImagens(43);
-}
-
-function tam44() {
-    atualizarImagens(44);
-}
-
-function tam45() {
-    atualizarImagens(45);
-}
-
-function atualizarImagens(tamanho) {
-    var conjuntosDeImagens = {
-        38: [
-            '/images/produtos/Tamanhos/38/air_force_nike_38.png',
-            '/images/produtos/Tamanhos/38/dunk_low_nike_38.png',
-            '/images/produtos/Tamanhos/38/forum_adidas_38.png',
-            '/images/produtos/Tamanhos/38/new_balance_38.png'
-        ],
-        39: [
-            '/images/produtos/Tamanhos/39/229172-368-450.png',
-            '/images/produtos/Tamanhos/39/443019-368-450.png',
-            '/images/produtos/Tamanhos/39/512793-368-450.png',
-            '/images/produtos/Tamanhos/39/514103-368-450.png'
-        ],
-        40: [
-            '/images/produtos/Tamanhos/40/394254-368-450.png',
-            '/images/produtos/Tamanhos/40/443019-368-450 (1).png',
-            '/images/produtos/Tamanhos/40/491449-368-450.png',
-            '/images/produtos/Tamanhos/39/514103-368-450.png'
-        ],
-        41: [
-            '/images/produtos/Tamanhos/41/229172-368-450.png',
-            '/images/produtos/Tamanhos/41/443019-368-450.png',
-            '/images/produtos/Tamanhos/41/475977-368-450.png',
-            '/images/produtos/Tamanhos/41/514103-368-450.png'
-        ],
-        42: [
-            '/images/produtos/Tamanhos/42/229172-368-450.png',
-            '/images/produtos/Tamanhos/42/479002-368-450.png',
-            '/images/produtos/Tamanhos/42/515031-368-450.png',
-            '/images/produtos/Tamanhos/42/483979-368-450.png'
-        ],
-        43: [
-            '/images/produtos/Tamanhos/43/522013-368-450.png',
-            '/images/produtos/Tamanhos/43/229172-368-450.png',
-            '/images/produtos/Tamanhos/43/479033-368-450.png',
-            '/images/produtos/Tamanhos/43/470998-368-450.png'
-        ],
-        44: [
-            '/images/produtos/Tamanhos/44/229172-368-450.png',
-            '/images/produtos/Tamanhos/44/394254-368-450.png',
-            '/images/produtos/Tamanhos/44/433279-368-450.png',
-            '/images/produtos/Tamanhos/44/440632-368-450.png'
-        ],
-        45: [
-            '/images/produtos/Tamanhos/45/229172-368-450.png',
-            '/images/produtos/Tamanhos/45/394254-368-450.png',
-            '/images/produtos/Tamanhos/45/433279-368-450.png',
-            '/images/produtos/Tamanhos/45/440632-368-450.png'
-        ]
-    };
-
-    var imagens = conjuntosDeImagens[tamanho];
-
-    if (imagens) {
-        var conjuntoImagensDiv = document.getElementById('conjunto-imagens');
-        conjuntoImagensDiv.innerHTML = `
-            <div class="box_boot1">
-                <img src="${imagens[0]}" alt="">
-            </div>
-            <div class="box_boot2">
-                <img src="${imagens[1]}" alt="">
-            </div>
-            <div class="box_boot3">
-                <img src="${imagens[2]}" alt="">
-            </div>
-            <div class="box_boot4">
-                <img src="${imagens[3]}" alt="">
-            </div>
-        `;
-    }
-}
-document.addEventListener('DOMContentLoaded', function() {
-    const sizes = [38, 39, 40, 41, 42, 43, 44, 45];
-    let currentIndex = 2; // Índice inicial do tamanho 40
-
-    function updateSizeDisplay() {
-        const sizeItems = document.querySelectorAll('.box-tamanho-esquerdo li');
-        sizeItems.forEach(item => item.classList.remove('active'));
-        sizeItems[currentIndex].classList.add('active');
-    }
-
-    document.querySelector('.size-nav.up').addEventListener('click', function() {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateSizeDisplay();
-        }
-    });
-
-    document.querySelector('.size-nav.down').addEventListener('click', function() {
-        if (currentIndex < sizes.length - 1) {
-            currentIndex++;
-            updateSizeDisplay();
-        }
-    });
-
-    // Funções para os cliques diretos nos tamanhos
-    function tam38() { currentIndex = 0; updateSizeDisplay(); }
-    function tam39() { currentIndex = 1; updateSizeDisplay(); }
-    function tam40() { currentIndex = 2; updateSizeDisplay(); }
-    function tam41() { currentIndex = 3; updateSizeDisplay(); }
-    function tam42() { currentIndex = 4; updateSizeDisplay(); }
-    function tam43() { currentIndex = 5; updateSizeDisplay(); }
-    function tam44() { currentIndex = 6; updateSizeDisplay(); }
-    function tam45() { currentIndex = 7; updateSizeDisplay(); }
-
-    // Inicializar a exibição de tamanho
-    updateSizeDisplay();
-});
-
-
-    </script>
+    <section id="sessao-email" class="sessao-email"></section>
+    <section id="sessao-footer" class="sessao-footer"></section>
+    
+    <script src="script.js"></script> <!-- O javascript está em um arquivo à parte -->
 </body>
-
 </html>
