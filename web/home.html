@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="" type="image/x-icon">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="/web/style/style-home.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     <title>TT-STORE</title>
 </head>
 <body>
@@ -23,19 +25,20 @@
             <li><a class="links" href="simulador.html">CONVERSE</a></li>
             <li><a class="links" href="#sessao-newBalance">NB</a></li>
         </ul>
+        <div class="barraPesquisa" id="barraPesquisa">
+            <input type="text" id="searchInput" placeholder="Digite o termo de busca">
+            <button onclick="buscar()">Buscar</button>
+            <ul id="resultados"></ul>
+        </div>
         <ul class="nav-auth">
-            <li class="buscar" onclick="buscar()"><img src="images/lupa.png"></li>
+            <li class="buscar" onclick="toggleBarraPesquisa()"><img src="images/lupa.png"></li>
             <li><a class="links" href="/images/do-utilizador.png"><img src="images/carrinho-de-compras-de-design-xadrez.png"></a></li>
             <li><a class="links" href="login.html"><img src="images/adicionar-aos-favoritos.png"></a></li>
             <li><a class="links" href="login.html"><img src="images/do-utilizador.png"></a></li>
         </ul>
     </nav>
 
-    <div class="barraPesquisa" id="barraPesquisa">
-        <input type="text" id="searchInput" placeholder="Digite o termo de busca">
-        <button onclick="buscar()">Buscar</button>
-        <ul id="resultados"></ul>
-    </div>
+
 
     <section class="sessao-inicio">
         <div class="carousel-container">
@@ -52,7 +55,7 @@
 
     <section class="sessao-novidades">
         <h2 class="drop">Drops Disponíveis</h2>
-        <div class="divFlex"> <!-- Div para alinhar os produtos horizontalmente -->
+        <div class="divFlex"> <!-- Adicione a classe 'product-slider' aqui -->
             
             <!-- Os produtos possuem a mesma classe, mas diferentes IDs -->
             <a class="linkProduto" id="produto01">
@@ -127,7 +130,7 @@
     </section>
 
     <section class="sessao-marcas">
-        <div class="divFlex"> <!-- Div para alinhar as marcas horizontalmente -->
+        <div class="divFlex slider"> <!-- Adicione a classe 'slider' aqui -->
             <a class="linkMarca">
                 <div class="divMarca">
                     <img src="images/brand-nike-icon-256x89-ps8h00z7.png">
@@ -153,6 +156,42 @@
                     <img src="images/icon_vans.png">
                 </div>
             </a>
+            <!-- Novas marcas adicionadas -->
+            <a class="linkMarca">
+                <div class="divMarca">
+                    <img src="./images/png-transparent-new-balance-logo-shoe-reebok-logo-microphone-text-monochrome-removebg-preview.png">
+                </div>
+            </a>
+            <a class="linkMarca">
+                <div class="divMarca">
+                    <img src="./images/converse-logo3-logo-svgrepo-com.svg">
+                </div>
+            </a>
+            <a class="linkMarca">
+                <div class="divMarca">
+                    <img src="./images/png-transparent-under-armour-logo-t-shirt-under-armour-logo-decal-clothing-everyday-casual-shoes-white-trademark-monochrome-thumbnail-removebg-preview (1).png">
+                </div>
+            </a>
+            <a class="linkMarca">
+                <div class="divMarca">
+                    <img src="./images/png-transparent-asics-sneakers-sport-logo-asics-logo-text-trademark-sport-removebg-preview.png">
+                </div>
+            </a>
+            <a class="linkMarca">
+                <div class="divMarca">
+                    <img src="./images/png-transparent-slipper-crocs-uk-ltd-shoe-sandal-crocs-child-text-retail-removebg-preview (1).png">
+                </div>
+            </a>
+            <a class="linkMarca">
+                <div class="divMarca">
+                    <img src="./images/b2bgn_rider-removebg-preview (1).png">
+                </div>
+            </a>
+            <a class="linkMarca">
+                <div class="divMarca">
+                    <img src="./images/png-transparent-fila-shoes-footwear-fashion-shoe-brands-and-logos-icon-thumbnail-removebg-preview.png">
+                </div>
+            </a>
         </div>        
     </section>
 
@@ -176,7 +215,7 @@
                 <!-- Os produtos possuem a mesma classe, mas diferentes IDs -->
                 <article class="articleBoot" id="box_boot1">
                     <div class="heart">
-                        <img src="images/heart_icon.png">
+                        <img src="./images/heart-alt-svgrepo-com.svg">
                     </div>
                     <div class="divImgProduto">                        
                         <img src="images/produtos/Tamanhos/45/229172-368-450.png">
@@ -194,7 +233,7 @@
                 </article>
                 <article class="articleBoot" id="box_boot2">
                     <div class="heart">
-                        <img src="images/heart_icon.png">
+                        <img src="./images/heart-alt-svgrepo-com.svg">
                     </div>
                     <div class="divImgProduto">                        
                         <img src="images/produtos/Tamanhos/45/440632-368-450.png">
@@ -212,7 +251,7 @@
                 </article>
                 <article class="articleBoot" id="box_boot3">
                     <div class="heart">
-                        <img src="images/heart_icon.png">
+                        <img src="./images/heart-alt-svgrepo-com.svg">
                     </div>
                     <div class="divImgProduto">                        
                         <img src="images/produtos/Tamanhos/45/394254-368-450.png">
@@ -230,7 +269,7 @@
                 </article>
                 <article class="articleBoot" id="box_boot4">
                     <div class="heart">
-                        <img src="images/heart_icon.png">
+                        <img src="./images/heart-alt-svgrepo-com.svg">
                     </div>
                     <div class="divImgProduto">                        
                         <img src="images/produtos/Tamanhos/45/433279-368-450.png">
@@ -250,9 +289,115 @@
         </div>             
     </section>
 
-    <section id="sessao-email" class="sessao-email"></section>
-    <section id="sessao-footer" class="sessao-footer"></section>
-    
-    <script src="script.js"></script> <!-- O javascript está em um arquivo à parte -->
+    <section id="sessao-email" class="sessao-email">
+        <div class="caixa_de_texto">
+            <div class="newsletter-container">
+                <div class="newsletter-content">
+                    <h2>Lançamentos e novidades</h2>
+                    <p>Receba com exclusividade a nossa newsletter com tendências, promoções e muito mais</p>
+                </div>
+                <div class="newsletter-form">
+                    <form>
+                        <input type="email"  required>
+                        <button type="submit">CADASTRAR</button>
+                        <div class="newsletter-privacy">
+                            <input type="checkbox" id="privacy" required>
+                            <label for="privacy">Aceito receber conteúdos da TT-Store e concordo com a <a href="#">Política de Privacidade</a></label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="sessao-footer" class="sessao-footer">
+        <div class="footer-section">
+            <h3>Produtos</h3>
+            <ul>
+                <li><a href="#">Novidades</a></li>
+                <li><a href="#">Tênis</a></li>
+                <li><a href="#">Tênis masculino</a></li>
+                <li><a href="#">Tênis feminino</a></li>
+                <li><a href="#">Marcas</a></li>
+                <li><a href="#">Outlet</a></li>
+                <li><a href="#">Roupas</a></li>
+                <li><a href="#">Acessórios</a></li>
+                <li><a href="#">Calçados</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3 class="colecao">Coleções Especiais</h3>
+            <ul>
+                <li><a href="#">adidas adi2000</a></li>
+                <li><a href="#">adidas Forum</a></li>
+                <li><a href="#">Adidas Superstar</a></li>
+                <li><a href="#">Nike Air Force</a></li>
+                <li><a href="#">Air Jordan 1</a></li>
+                <li><a href="#">Nike Air Max 90</a></li>
+                <li><a href="#">Nike Air Max 97</a></li>
+                <li><a href="#">Vans Authentic</a></li>
+                <li><a href="#">Vans Old Skool</a></li>
+                <li><a href="#">Vans Ultrarange</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3 class="inst">Institucional</h3>
+            <ul>
+                <li><a href="#">Quem somos</a></li>
+                <li><a href="#">Trabalhe conosco</a></li>
+                <li><a href="#">Seja um franqueado</a></li>
+                <li><a href="#">Nossas lojas</a></li>
+                <li><a href="#">Termos de uso</a></li>
+                <li><a href="#">Política de privacidade</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3 class="help">Ajuda</h3>
+            <ul>
+                <li><a href="#">Central de Relacionamento</a></li>
+                <li><a href="#">Tipos de entrega</a></li>
+                <li><a href="#">Solicite seus dados</a></li>
+                <li><a href="#">Troca e devoluções</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3 class="rede">Siga a TT-Store</h3>
+            <div class="social-media">
+                <a href="#"><img src="./images/facebook-176-svgrepo-com (1).svg" alt="Facebook"></a>
+                <a href="#"><img src="./images/instagram-svgrepo-com.svg" alt="Instagram"></a>
+            </div>
+            
+        </div>
+        
+    </section>
+    <div class="footer-bottom">
+        <div class="footer-bottom-section">
+            <h3>Compra segura</h3>
+            <div class="security-logos">
+                <img src="./images/stamp-0___c2cb770fe5586bf7872946994001842a.png" alt="Security Logo 1">
+                <img src="./images/stamp-1___d2c88024b14012b7f729144058d5298e.png" alt="Security Logo 2">
+                <img src="./images/stamp-2___a429230590cca5214c76fb6c728d7acd.png" alt="Security Logo 3">
+            </div>
+        </div>
+        <div class="footer-bottom-section">
+            <h3>Formas de Pagamento</h3>
+            <div class="payment-logos">
+                <img src="./images/payment-0___860a781f1ca34daa718a076adbcccb93.svg" alt="Elo">
+                <img src="./images/payment-1___dc14c9b5f4b028cd543a8c7891f85ded.svg" alt="Amex">
+                <img src="./images/payment-2___8c2c9e77e0fa7c4e30406cc266200383.svg" alt="Pix">
+                <img src="./images/payment-3___5fdd63de0ea3cc36f1b3b1558c8a5226.svg" alt="Mastercard">
+                <img src="./images/payment-4___f0dcbfd8854d473a269f3e06ed551d56.svg" alt="Hipercard">
+                <img src="./images/payment-5___33dd13fd5f74a8adf402c81164c30b0e.svg" alt="Visa">
+            </div>
+        </div>
+        <div class="footer-bottom-section">
+            <h3>Fale com a gente</h3>
+            <p>De segunda a sexta, das 08:00 às 19:00, estamos aqui para ajudar. Nos chame nos canais digitais!</p>
+            <p><a href="tel:1121918391"> (11) 2191-8391<img id="phone" src="./images/phone-svgrepo-com (1).svg" alt="Phone"></a></p>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="/web/src/script-home.js"></script> <!-- O javascript está em um arquivo à parte -->
 </body>
 </html>

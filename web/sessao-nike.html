@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="stylesheet" href="/web/style/style-sessao-nike.css">
+
+    <title>TT-STORE</title>
+</head>
+
+<body>
+
+    <!-- Apenas o nav é necessário para navegação entre páginas -->
+    <nav>
+        <img class="logo" src="logo.png" alt="Logo">
+        <button class="nav-toggle" onclick="toggleNav()">Menu</button>
+        <ul class="nav-links">
+            <li><a class="links" href="#sessao-inicio">HOME</a></li>
+            <li><a class="links" href="#sessao-nike">NIKE</a></li>
+            <li><a class="links" href="#sessao-adidas">ADIDAS</a></li>
+            <li><a class="links" href="#sessao-vans">VANS</a></li>
+            <li><a class="links" href="#sessao-jordan">JORDAN</a></li>
+            <li><a class="links" href="#sessao-puma">PUMA</a></li>
+            <li><a class="links" href="simulador.html">CONVERSE</a></li>
+            <li><a class="links" href="#sessao-newBalance">NB</a></li>
+        </ul>
+        <div class="barraPesquisa" id="barraPesquisa">
+            <input type="text" id="searchInput" placeholder="Digite o termo de busca">
+            <button onclick="buscar()">Buscar</button>
+            <ul id="resultados"></ul>
+        </div>
+        <ul class="nav-auth">
+            <li class="buscar" onclick="toggleBarraPesquisa()"><img src="images/lupa.png"></li>
+            <li><a class="links" href="/images/do-utilizador.png"><img
+                        src="images/carrinho-de-compras-de-design-xadrez.png"></a></li>
+            <li><a class="links" href="login.html"><img src="images/adicionar-aos-favoritos.png"></a></li>
+            <li><a class="links" href="login.html"><img src="images/do-utilizador.png"></a></li>
+        </ul>
+    </nav>
+
+    <!-- ======================================================================================================== -->
+    <section id="sessao-filtros" class="sessao-filtros">
+        <h1>Nike Products</h1>
+        <div class="filter-bar">
+            <button id="filter-button" onclick="filtro()">Filter</button>
+            <h3>Ordenar Por: </h3>
+            <select id="sort-options" onchange="filterAndSortProducts()">
+                <option value="most-recent">Mais Recentes</option>
+                <option value="relevant">Relevância</option>
+                <option value="best-selling">Mais Vendidos</option>
+                <option value="highest-price">Maior Preço</option>
+                <option value="lowest-price">Menor Preço</option>
+                <option value="a-to-z">de A a Z</option>
+                <option value="z-to-a">de Z a A</option>
+            </select>
+            <article id="filter-options" class="hidden">
+                <div class="category">
+                    <div class="filter">
+                        <h3 onclick="toggleSection('color-options')">Cor <span class="arrow">▼</span></h3>
+                        <div id="color-options" class="filter-options hidden">
+                            <label><input type="checkbox" value="red" onclick="filterAndSortProducts()"> Red</label>
+                            <label><input type="checkbox" value="blue" onclick="filterAndSortProducts()"> Blue</label>
+                            <label><input type="checkbox" value="green" onclick="filterAndSortProducts()"> Green</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <div class="filter">
+                        <h3 onclick="toggleSection('gender-options')">Gêneros <span class="arrow">▼</span></h3>
+                        <div id="gender-options" class="filter-options hidden">
+                            <label><input type="checkbox" value="masculino" onclick="filterAndSortProducts()">
+                                Masculino</label>
+                            <label><input type="checkbox" value="feminino" onclick="filterAndSortProducts()">
+                                Feminino</label>
+                            <label><input type="checkbox" value="infantil" onclick="filterAndSortProducts()">
+                                Infantil</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="category">
+                    <div class="filter">
+                        <h3 onclick="toggleSection('size-options')">Tamanho <span class="arrow">▼</span></h3>
+                        <div id="size-options" class="filter-options hidden">
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" value="22" onclick="filterAndSortProducts()"> 22</label>
+                                <label><input type="checkbox" value="23" onclick="filterAndSortProducts()"> 23</label>
+                                <label><input type="checkbox" value="24" onclick="filterAndSortProducts()"> 24</label>
+                                <label><input type="checkbox" value="25" onclick="filterAndSortProducts()"> 25</label>
+                                <label><input type="checkbox" value="26" onclick="filterAndSortProducts()"> 26</label>
+                                <label><input type="checkbox" value="27" onclick="filterAndSortProducts()"> 27</label>
+                                <label><input type="checkbox" value="28" onclick="filterAndSortProducts()"> 28</label>
+                                <label><input type="checkbox" value="29" onclick="filterAndSortProducts()"> 29</label>
+                                <label><input type="checkbox" value="30" onclick="filterAndSortProducts()"> 30</label>
+                                <label><input type="checkbox" value="31" onclick="filterAndSortProducts()"> 31</label>
+                                <label><input type="checkbox" value="32" onclick="filterAndSortProducts()"> 32</label>
+                                <label><input type="checkbox" value="33" onclick="filterAndSortProducts()"> 33</label>
+                                <label><input type="checkbox" value="34" onclick="filterAndSortProducts()"> 34</label>
+                                <label><input type="checkbox" value="35" onclick="filterAndSortProducts()"> 35</label>
+                                <label><input type="checkbox" value="36" onclick="filterAndSortProducts()"> 36</label>
+                                <label><input type="checkbox" value="37" onclick="filterAndSortProducts()"> 37</label>
+                                <label><input type="checkbox" value="38" onclick="filterAndSortProducts()"> 38</label>
+                                <label><input type="checkbox" value="39" onclick="filterAndSortProducts()"> 39</label>
+                                <label><input type="checkbox" value="40" onclick="filterAndSortProducts()"> 40</label>
+                                <label><input type="checkbox" value="41" onclick="filterAndSortProducts()"> 41</label>
+                                <label><input type="checkbox" value="42" onclick="filterAndSortProducts()"> 42</label>
+                                <label><input type="checkbox" value="43" onclick="filterAndSortProducts()"> 43</label>
+                                <label><input type="checkbox" value="44" onclick="filterAndSortProducts()"> 44</label>
+                                <label><input type="checkbox" value="45" onclick="filterAndSortProducts()"> 45</label>
+                                <label><input type="checkbox" value="46" onclick="filterAndSortProducts()"> 46</label>
+                                <label><input type="checkbox" value="47" onclick="filterAndSortProducts()"> 47</label>
+                                <label><input type="checkbox" value="48" onclick="filterAndSortProducts()"> 48</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" value="PP" onclick="filterAndSortProducts()"> PP</label>
+                                <label><input type="checkbox" value="P" onclick="filterAndSortProducts()"> P</label>
+                                <label><input type="checkbox" value="M" onclick="filterAndSortProducts()"> M</label>
+                                <label><input type="checkbox" value="G" onclick="filterAndSortProducts()"> G</label>
+                                <label><input type="checkbox" value="GG" onclick="filterAndSortProducts()"> GG</label>
+                                <label><input type="checkbox" value="XG" onclick="filterAndSortProducts()"> XG</label>
+                                <label><input type="checkbox" value="XXG" onclick="filterAndSortProducts()"> XXG</label>
+                                <label><input type="checkbox" value="U" onclick="filterAndSortProducts()"> U</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter">
+                    <h3 onclick="toggleSection('product-type-options')">Tipo de Produto <span class="arrow">▼</span>
+                    </h3>
+                    <div id="product-type-options" class="filter-options hidden">
+                        <label><input type="checkbox" value="tenis" onclick="filterAndSortProducts()"> Tênis</label>
+                        <label><input type="checkbox" value="chinelo" onclick="filterAndSortProducts()"> Chinelo</label>
+                        <label><input type="checkbox" value="bone" onclick="filterAndSortProducts()"> Boné</label>
+                        <label><input type="checkbox" value="blusas" onclick="filterAndSortProducts()"> Blusas</label>
+                        <label><input type="checkbox" value="camisetas" onclick="filterAndSortProducts()">
+                            Camisetas</label>
+                    </div>
+                </div>
+                <button onclick="filterAndSortProducts()">Filtrar</button>
+            </article>
+        </div>
+    </section>
+    <!-- ================================================================================================================= -->
+    <section id="sessao-produtos" class="sessao-produtos">
+    <div class="box-tamanho-direito" id="conjunto-imagens">
+        <article class="articleBoot" id="box_boot1">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="images/produtos/Tamanhos/45/229172-368-450.png">
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+        <article class="articleBoot" id="box_boot2">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="images/produtos/Tamanhos/45/229172-368-450.png">
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+        <article class="articleBoot" id="box_boot3">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="images/produtos/Tamanhos/45/229172-368-450.png">
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+        <article class="articleBoot" id="box_boot3">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="images/produtos/Tamanhos/45/229172-368-450.png">
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+            </div>
+        </article>
+        <article class="articleBoot" id="box_boot3">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="images/produtos/Tamanhos/45/229172-368-450.png">
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+            </div>
+        </article>
+    </div>
+    <!-- primeira parte da sessão -->
+    <!-- =========================================================================================================== -->
+    <div class="box-tamanho-direito" id="conjunto-imagens">
+        <article class="articleBoot" id="box_boot1">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="images/produtos/Tamanhos/45/229172-368-450.png">
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+        <article class="articleBoot" id="box_boot2">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="images/produtos/Tamanhos/45/229172-368-450.png">
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+        <article class="articleBoot" id="box_boot3">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="images/produtos/Tamanhos/45/229172-368-450.png">
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+        <article class="articleBoot" id="box_boot3">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="images/produtos/Tamanhos/45/229172-368-450.png">
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+            </div>
+        </article>
+        <article class="articleBoot" id="box_boot3">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="images/produtos/Tamanhos/45/229172-368-450.png">
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+            </div>
+        </article>
+    </div>
+
+    <!-- segunda parte da sessão -->
+    <!-- =========================================================================================================== -->
+    <div class="box-tamanho-direito" id="conjunto-imagens">
+        <article class="articleBoot" id="box_boot1">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="images/produtos/Tamanhos/45/229172-368-450.png">
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+        <article class="articleBoot" id="box_boot2">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="images/produtos/Tamanhos/45/229172-368-450.png">
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+        <article class="articleBoot" id="box_boot3">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="images/produtos/Tamanhos/45/229172-368-450.png">
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+        <article class="articleBoot" id="box_boot3">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="images/produtos/Tamanhos/45/229172-368-450.png">
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+            </div>
+        </article>
+        <article class="articleBoot" id="box_boot3">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="images/produtos/Tamanhos/45/229172-368-450.png">
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+            </div>
+        </article>
+    </div>
+    <!-- terceira parte da sessão -->
+    <!-- =========================================================================================================== -->
+    <div class="box-tamanho-direito" id="conjunto-imagens">
+        <article class="articleBoot" id="box_boot1">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="images/produtos/Tamanhos/45/229172-368-450.png">
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+        <article class="articleBoot" id="box_boot2">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="images/produtos/Tamanhos/45/229172-368-450.png">
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+        <article class="articleBoot" id="box_boot3">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="images/produtos/Tamanhos/45/229172-368-450.png">
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+        <article class="articleBoot" id="box_boot3">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="images/produtos/Tamanhos/45/229172-368-450.png">
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+            </div>
+        </article>
+        <article class="articleBoot" id="box_boot3">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="images/produtos/Tamanhos/45/229172-368-450.png">
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+            </div>
+        </article>
+    </div>
+    <!-- quarta parte da sessão -->
+    <!-- =========================================================================================================== -->
+    <div class="box-tamanho-direito" id="conjunto-imagens">
+        <article class="articleBoot" id="box_boot1">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="images/produtos/Tamanhos/45/229172-368-450.png">
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+        <article class="articleBoot" id="box_boot2">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="images/produtos/Tamanhos/45/229172-368-450.png">
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+        <article class="articleBoot" id="box_boot3">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="images/produtos/Tamanhos/45/229172-368-450.png">
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+        <article class="articleBoot" id="box_boot3">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="images/produtos/Tamanhos/45/229172-368-450.png">
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+            </div>
+        </article>
+        <article class="articleBoot" id="box_boot3">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="images/produtos/Tamanhos/45/229172-368-450.png">
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+            </div>
+        </article>
+    </div>
+ 
+    <button id="verMaisBtn">Ver Mais</button>
+    </section>
+
+
+    <section id="sessao-email" class="sessao-email">
+        <div class="caixa_de_texto">
+            <div class="newsletter-container">
+                <div class="newsletter-content">
+                    <h2>Lançamentos e novidades</h2>
+                    <p>Receba com exclusividade a nossa newsletter com tendências, promoções e muito mais</p>
+                </div>
+                <div class="newsletter-form">
+                    <form>
+                        <input type="email" required>
+                        <button type="submit">CADASTRAR</button>
+                        <div class="newsletter-privacy">
+                            <input type="checkbox" id="privacy" required>
+                            <label for="privacy">Aceito receber conteúdos da TT-Store e concordo com a <a
+                                    href="#">Política de Privacidade</a></label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="sessao-footer" class="sessao-footer">
+        <div class="footer-section">
+            <h3>Produtos</h3>
+            <ul>
+                <li><a href="#">Novidades</a></li>
+                <li><a href="#">Tênis</a></li>
+                <li><a href="#">Tênis masculino</a></li>
+                <li><a href="#">Tênis feminino</a></li>
+                <li><a href="#">Marcas</a></li>
+                <li><a href="#">Outlet</a></li>
+                <li><a href="#">Roupas</a></li>
+                <li><a href="#">Acessórios</a></li>
+                <li><a href="#">Calçados</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3 class="colecao">Coleções Especiais</h3>
+            <ul>
+                <li><a href="#">adidas adi2000</a></li>
+                <li><a href="#">adidas Forum</a></li>
+                <li><a href="#">Adidas Superstar</a></li>
+                <li><a href="#">Nike Air Force</a></li>
+                <li><a href="#">Air Jordan 1</a></li>
+                <li><a href="#">Nike Air Max 90</a></li>
+                <li><a href="#">Nike Air Max 97</a></li>
+                <li><a href="#">Vans Authentic</a></li>
+                <li><a href="#">Vans Old Skool</a></li>
+                <li><a href="#">Vans Ultrarange</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3 class="inst">Institucional</h3>
+            <ul>
+                <li><a href="#">Quem somos</a></li>
+                <li><a href="#">Trabalhe conosco</a></li>
+                <li><a href="#">Seja um franqueado</a></li>
+                <li><a href="#">Nossas lojas</a></li>
+                <li><a href="#">Termos de uso</a></li>
+                <li><a href="#">Política de privacidade</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3 class="help">Ajuda</h3>
+            <ul>
+                <li><a href="#">Central de Relacionamento</a></li>
+                <li><a href="#">Tipos de entrega</a></li>
+                <li><a href="#">Solicite seus dados</a></li>
+                <li><a href="#">Troca e devoluções</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3 class="rede">Siga a TT-Store</h3>
+            <div class="social-media">
+                <a href="#"><img src="./images/facebook-176-svgrepo-com (1).svg" alt="Facebook"></a>
+                <a href="#"><img src="./images/instagram-svgrepo-com.svg" alt="Instagram"></a>
+            </div>
+
+        </div>
+
+    </section>
+    <div class="footer-bottom">
+        <div class="footer-bottom-section">
+            <h3>Compra segura</h3>
+            <div class="security-logos">
+                <img src="./images/stamp-0___c2cb770fe5586bf7872946994001842a.png" alt="Security Logo 1">
+                <img src="./images/stamp-1___d2c88024b14012b7f729144058d5298e.png" alt="Security Logo 2">
+                <img src="./images/stamp-2___a429230590cca5214c76fb6c728d7acd.png" alt="Security Logo 3">
+            </div>
+        </div>
+        <div class="footer-bottom-section">
+            <h3>Formas de Pagamento</h3>
+            <div class="payment-logos">
+                <img src="./images/payment-0___860a781f1ca34daa718a076adbcccb93.svg" alt="Elo">
+                <img src="./images/payment-1___dc14c9b5f4b028cd543a8c7891f85ded.svg" alt="Amex">
+                <img src="./images/payment-2___8c2c9e77e0fa7c4e30406cc266200383.svg" alt="Pix">
+                <img src="./images/payment-3___5fdd63de0ea3cc36f1b3b1558c8a5226.svg" alt="Mastercard">
+                <img src="./images/payment-4___f0dcbfd8854d473a269f3e06ed551d56.svg" alt="Hipercard">
+                <img src="./images/payment-5___33dd13fd5f74a8adf402c81164c30b0e.svg" alt="Visa">
+            </div>
+        </div>
+        <div class="footer-bottom-section">
+            <h3>Fale com a gente</h3>
+            <p>De segunda a sexta, das 08:00 às 19:00, estamos aqui para ajudar. Nos chame nos canais digitais!</p>
+            <p><a href="tel:1121918391"> (11) 2191-8391<img id="phone" src="./images/phone-svgrepo-com (1).svg"
+                        alt="Phone"></a></p>
+        </div>
+    </div>
+
+    <script src="/web/src/script-sessao-nike.js"></script> <!-- O javascript está em um arquivo à parte -->
+</body>
+
+</html>

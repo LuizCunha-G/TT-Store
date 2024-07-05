@@ -1,0 +1,610 @@
+/* Estilos gerais */
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  background: whitesmoke;
+  width: 100%;
+}
+
+a{
+  cursor: pointer;
+}
+
+/*=============================================================================*/
+
+/* Cabeçalho */
+
+/* O nav desempenha o mesmo papel do header, economizando código */
+nav{
+  position: sticky; /* position sticky e top 0 irão manter o nav sempre visível e no topo da tela, sem afetar outros elementos*/
+  top: 0;
+  width: 100%;
+  height: 75px;
+  background: black;
+  backdrop-filter: blur(19.5px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  padding: 20px;
+}
+
+.logo{
+  width: 100px;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-links li{
+  list-style: none;
+  width: 100px;
+}
+
+.links, .buscar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s ease;
+  border-bottom: 2px solid black;
+  padding-bottom: 10px;
+}
+
+.links:hover, .buscar:hover  {
+  border-bottom: 2px solid white;
+}
+
+.nav-auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-auth li{
+  list-style: none;
+  width: 50px;
+}
+
+.buscar{
+  cursor: pointer;
+}
+
+.nav-auth img{
+  width: 24px;
+}
+
+.barraPesquisa {
+  position: absolute; /* Ajustei para position absolute */
+  top: 100%; /* Posicione abaixo da barra de navegação */
+  right: 20px; /* Alinhado à direita */
+  display: none;
+  background-color: #ffffff86;
+  color: #000; /* Ajustei a cor do texto */
+  width: 280px;
+  border-radius: 4px;
+  border: #000000 3px solid;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adicionei sombra */
+  gap: 50%;
+}
+
+.barraPesquisa input[type="text"] {
+  width: calc(210% - 350px); /* Ajuste para o tamanho do input */
+  margin-right: 10px; /* Espaçamento à direita */
+}
+
+.barraPesquisa button {
+  width: 50px; /* Largura do botão */
+  padding: 8px; /* Espaçamento interno do botão */
+  background-color: #290429;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+}
+
+.barraPesquisa button:hover {
+  background-color: #000000;
+}
+/* ====================================================================================== */
+
+/* Sessão Filtro */
+.filter-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f1f1f1;
+    margin-bottom: 1rem;
+    position: relative;
+    gap: 2%;
+}
+
+#filter-button {
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+#filter-options {
+    display: none; /* Inicialmente oculto */
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    width: 350px;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#filter-options.visible {
+    display: flex; /* Exibe apenas quando a classe 'visible' é adicionada */
+}
+
+#filter-options .category {
+    margin-bottom: 1rem; /* Espaçamento entre as categorias */
+    border-bottom: 1px solid #ddd; /* Linha separadora entre categorias */
+}
+
+#filter-options button {
+    align-self: flex-end; /* Alinha o botão à direita */
+    margin-top: 1rem; /* Espaçamento superior */
+}
+
+.filter-options.hidden {
+    display: none;
+}
+
+.filter h3 {
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.section {
+    margin-left: 1rem;
+}
+
+.arrow {
+    font-size: 1rem;
+}
+
+.filter .checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.filter .checkbox-group label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.filter .checkbox-group input[type="checkbox"] {
+    display: none;
+}
+
+.filter .checkbox-group input[type="checkbox"]:checked + label {
+    background-color: #333;
+    color: white;
+    border-color: #333;
+}
+
+.filter .checkbox-group label:hover {
+    background-color: #f0f0f0;
+    border-color: #ccc;
+}
+
+.filter select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+
+/* ================================  FIM DA BARRA DE PESQUISA ============================ */
+/* Sessão Tamanhos */
+
+.ssessao-produtos {
+    background: #F6EDE7; /* Cor de fundo */
+    padding: 20px;  
+    height: 550px;
+  }
+  
+  /* Estilo dos títulos (h2) */
+  .sessao-produtos h2 {
+    font-size: 28pt; /* Tamanho da fonte */
+    margin-bottom: 10px; /* Margem inferior */
+  }
+  
+  /* div para alinhar a box esquerda e direita horizontalmente */
+  .divFlexTamanho{
+    display: flex;
+  }
+  /* Estilo dos botões de navegação */
+ 
+  .box-tamanho-direito {
+    display: flex;
+    width: 100%;
+  }
+  
+  /* article do produto */
+  .articleBoot {
+    margin: 0px 10px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    box-shadow: 0px 0px 6px silver;
+    background: #ffffff;
+    position: relative; /* Para posicionar elementos internos */
+    transition: all 0.3s ease-in-out; /* Adiciona uma transição suave */
+  }
+  
+  .articleBoot:hover {
+    transform: scale(1.06);
+    box-shadow: 0px 0px 16px silver; /* Adiciona sombra */
+  }
+  
+  .articleBoot .overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.4); /* Fundo branco translúcido */
+    width: 100%;
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 20px;
+    display: none; /* Esconde o overlay inicialmente */
+  }
+  
+  .articleBoot:hover .overlay {
+    display: block; /* Mostra o overlay ao passar o mouse */
+  }
+  
+  .articleBoot .heart {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .articleBoot .heart img {
+    width: 24px; /* Tamanho do ícone */
+    height: 24px; /* Tamanho do ícone */
+  }
+  
+  .overlay button {
+    background-color: #290429; /* Cor de fundo do botão */
+    border: 1px solid #290429;
+    color: white; /* Cor do texto do botão */
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    text-align: center; /* Centraliza o texto do botão */
+    font-size: 12pt; /* Tamanho da fonte do botão */
+    margin: 4px 2px; /* Margem ao redor do botão */
+    font-weight: bold;
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s ease; /* Transição suave ao mudar a cor de fundo */
+  }
+  
+  .overlay button:hover {
+    background-color: white;
+    color: #290429;
+  }
+  
+  /* Estilo para o item da lista ativo */
+  .num-ativo {
+    background-color: #f0f0f0; /* Exemplo de cor de fundo para item selecionado */
+    font-weight: bold;
+  }
+  
+  /* div para centralizar a imagem do produto */
+.divImgProduto{
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Imagem do produto */
+  .divImgProduto img{
+    width: 250px;
+    object-fit: cover;
+  }
+
+/* div para centralizar e estilizar o nome do produto */
+.divNomeProduto{
+  margin: 0 auto;
+  margin-bottom: 10px;
+  width: 160px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* estilo do preço à vista do produto */
+.precoAVista {
+  font-weight: bold;
+  font-size: 12pt;
+  text-align: center;
+}
+
+/* estilo do preço parcelado do produto */
+.precoParcelado{
+  font-size: 10pt;
+  text-align: center;
+}
+
+
+/*=============================================================================*/
+
+/* Sessão Email */
+.sessao-email {
+    background: #290429; /* Cor de fundo */
+    margin: auto; /* Margem automática */
+    display: flex; /* Ativa flexbox */
+    flex-direction: row; /* Organização em coluna */
+    align-items: center; /* Alinha itens no centro */
+    height: 45vh; /* Altura da tela (50%) */
+    max-height: 100vh; /* Altura máxima (tela cheia) */
+    justify-content: space-around; /* Distribui espaço entre as marcas */
+  }
+  
+  .newsletter-container {
+    display: flex;
+    background-color: #290429;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    max-width: 2000px;
+    width: 100%;
+  }
+  
+  .newsletter-content {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .newsletter-content h2 {
+    font-size: 30px;
+    margin: 0 0 10px;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .newsletter-content p {
+    font-size: 20px;
+    color: #ffffff;
+  }
+  
+  .newsletter-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .newsletter-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .newsletter-form input[type="email"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 16px;
+  }
+  
+  .newsletter-form button {
+    padding: 10px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .newsletter-form button:hover {
+    background-color: #9a64af;
+  }
+  
+  .newsletter-privacy {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .newsletter-privacy input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  .newsletter-privacy label {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .newsletter-privacy a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .newsletter-privacy a:hover {
+    text-decoration: underline;
+  }
+  
+  /*=============================================================================*/
+  
+  /* Sessão Footer */
+  .sessao-footer {
+    background: #000000; /* Cor de fundo */
+    margin: auto; /* Margem automática */
+    display: flex; /* Ativa flexbox */
+    flex-direction: row; /* Organização em coluna */
+    align-items: center; /* Alinha itens no centro */
+    height: 60vh; /* Altura da tela (50%) */
+    max-height: 100vh; /* Altura máxima (tela cheia) */
+    justify-content: space-around; /* Distribui espaço entre as marcas */
+  }
+  
+  .footer-section {
+    margin: 10px;
+    min-width: 200px;
+  }
+  
+  .footer-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  .colecao{
+    margin-top:   5vh;
+  }
+  .inst{
+    margin-top:  -15vh;
+  }
+  
+  .help{
+    margin-top:  -25vh;
+  }
+  
+  .rede{
+    margin-top:  -25vh;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-section ul li a:hover {
+    color: #ddd;
+  }
+  
+  .social-media {
+    display: flex;
+    gap: 10px;
+    margin-right: 30px;
+    justify-content: center;
+    /* border: rgb(182, 23, 23) 2px solid; */
+    
+  }
+  
+  .social-media a img {
+    width: 50px;
+    height: 50px;
+    margin-right: 27px;
+    /* border: rgb(204, 202, 202) 2px solid; */
+  }
+  
+  .app-download p {
+    margin: 10px 0;
+  }
+  
+  .app-download a img {
+    width: 120px;
+    margin: 5px 0;
+  }
+  
+  .footer-bottom {
+    background-color: #000000;
+    color: white;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-top: 1px solid #333;
+  }
+  
+  .footer-bottom-section {
+    margin: 10px;
+    min-width: 200px;
+    text-align: center;
+  }
+  
+  .footer-bottom-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  
+  .footer-bottom-section p {
+    margin: 10px 0;
+  }
+  
+  .footer-bottom-section img {
+    width: 50px;
+    height: auto;
+    margin: 0 10px;
+  }
+  
+  .footer-bottom-section .payment-logos img {
+    width: 50px;
+    height: auto;
+    margin: 5px 10px;
+  }
+  
+  .footer-bottom-section a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footer-bottom-section a:hover {
+    color: #ddd;
+  }
+  #phone{
+    margin-bottom: auto;
+    width: 25px;
+  }
+
+  /*=============================================================================*/
+
