@@ -17,6 +17,8 @@ body{
 
 a{
   cursor: pointer;
+  text-decoration: none;
+  color: #000;
 }
 
 /*=============================================================================*/
@@ -129,6 +131,16 @@ nav{
 /* ====================================================================================== */
 
 /* Sessão Filtro */
+.marca{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
 .filter-bar {
     display: flex;
     justify-content: flex-end;
@@ -357,6 +369,7 @@ nav{
   width: 160px;
   text-align: center;
   font-weight: bold;
+  
 }
 
 /* estilo do preço à vista do produto */

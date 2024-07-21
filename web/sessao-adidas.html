@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="stylesheet" href="/web/style/style-sessao-nike.css">
+
+    <title>TT-STORE</title>
+</head>
+
+<body>
+
+    <!-- Apenas o nav é necessário para navegação entre páginas -->
+    <nav>
+        <img class="logo" src="logo.png" alt="Logo">
+        <button class="nav-toggle" onclick="toggleNav()">Menu</button>
+        <ul class="nav-links">
+            <li><a class="links" href="home.html">HOME</a></li>
+            <li><a class="links" href="sessao-nike.html">NIKE</a></li>
+            <li><a class="links" href="sessao-adidas.html">ADIDAS</a></li>
+            <li><a class="links" href="sessao-vans.html">VANS</a></li>
+            <li><a class="links" href="sessao-jordan.html">JORDAN</a></li>
+            <li><a class="links" href="sessao-puma.html">PUMA</a></li>
+            <li><a class="links" href="sessao-converse.html">CONVERSE</a></li>
+            <li><a class="links" href="sessao-new-balance.html">NB</a></li>
+        </ul>
+        <div class="barraPesquisa" id="barraPesquisa">
+            <input type="text" id="searchInput" placeholder="Digite o termo de busca">
+            <button onclick="buscar()">Buscar</button>
+            <ul id="resultados"></ul>
+        </div>
+        <ul class="nav-auth">
+            <li class="buscar" onclick="toggleBarraPesquisa()"><img src="images/lupa.png"></li>
+            <li><a class="links" href="/images/do-utilizador.png"><img
+                        src="images/carrinho-de-compras-de-design-xadrez.png"></a></li>
+            <li><a class="links" href="login.html"><img src="images/adicionar-aos-favoritos.png"></a></li>
+            <li><a class="links" href="login.html"><img src="images/do-utilizador.png"></a></li>
+        </ul>
+    </nav>
+
+    <!-- ======================================================================================================== -->
+    <section id="sessao-filtros" class="sessao-filtros">
+        <div class="marca">
+            <h1>Adidas Products</h1>
+            <p>Explore as diversas linhas de tênis masculinos e descubra uma ampla seleção de calçados esportivos e
+                casuais adequados para o seu estilo.</p>
+        </div>
+
+        <div class="filter-bar">
+            <button id="filter-button" onclick="filtro()">Filter</button>
+            <h3>Ordenar Por: </h3>
+            <select id="sort-options" onchange="filterAndSortProducts()">
+                <option value="most-recent">Mais Recentes</option>
+                <option value="relevant">Relevância</option>
+                <option value="best-selling">Mais Vendidos</option>
+                <option value="highest-price">Maior Preço</option>
+                <option value="lowest-price">Menor Preço</option>
+                <option value="a-to-z">de A a Z</option>
+                <option value="z-to-a">de Z a A</option>
+            </select>
+            <article id="filter-options" class="hidden">
+                <div class="category">
+                    <div class="filter">
+                        <h3 onclick="toggleSection('color-options')">Cor <span class="arrow">▼</span></h3>
+                        <div id="color-options" class="filter-options hidden">
+                            <label><input type="checkbox" value="red" onclick="filterAndSortProducts()"> Red</label>
+                            <label><input type="checkbox" value="blue" onclick="filterAndSortProducts()"> Blue</label>
+                            <label><input type="checkbox" value="green" onclick="filterAndSortProducts()"> Green</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <div class="filter">
+                        <h3 onclick="toggleSection('gender-options')">Gêneros <span class="arrow">▼</span></h3>
+                        <div id="gender-options" class="filter-options hidden">
+                            <label><input type="checkbox" value="masculino" onclick="filterAndSortProducts()">
+                                Masculino</label>
+                            <label><input type="checkbox" value="feminino" onclick="filterAndSortProducts()">
+                                Feminino</label>
+                            <label><input type="checkbox" value="infantil" onclick="filterAndSortProducts()">
+                                Infantil</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="category">
+                    <div class="filter">
+                        <h3 onclick="toggleSection('size-options')">Tamanho <span class="arrow">▼</span></h3>
+                        <div id="size-options" class="filter-options hidden">
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" value="22" onclick="filterAndSortProducts()"> 22</label>
+                                <label><input type="checkbox" value="23" onclick="filterAndSortProducts()"> 23</label>
+                                <label><input type="checkbox" value="24" onclick="filterAndSortProducts()"> 24</label>
+                                <label><input type="checkbox" value="25" onclick="filterAndSortProducts()"> 25</label>
+                                <label><input type="checkbox" value="26" onclick="filterAndSortProducts()"> 26</label>
+                                <label><input type="checkbox" value="27" onclick="filterAndSortProducts()"> 27</label>
+                                <label><input type="checkbox" value="28" onclick="filterAndSortProducts()"> 28</label>
+                                <label><input type="checkbox" value="29" onclick="filterAndSortProducts()"> 29</label>
+                                <label><input type="checkbox" value="30" onclick="filterAndSortProducts()"> 30</label>
+                                <label><input type="checkbox" value="31" onclick="filterAndSortProducts()"> 31</label>
+                                <label><input type="checkbox" value="32" onclick="filterAndSortProducts()"> 32</label>
+                                <label><input type="checkbox" value="33" onclick="filterAndSortProducts()"> 33</label>
+                                <label><input type="checkbox" value="34" onclick="filterAndSortProducts()"> 34</label>
+                                <label><input type="checkbox" value="35" onclick="filterAndSortProducts()"> 35</label>
+                                <label><input type="checkbox" value="36" onclick="filterAndSortProducts()"> 36</label>
+                                <label><input type="checkbox" value="37" onclick="filterAndSortProducts()"> 37</label>
+                                <label><input type="checkbox" value="38" onclick="filterAndSortProducts()"> 38</label>
+                                <label><input type="checkbox" value="39" onclick="filterAndSortProducts()"> 39</label>
+                                <label><input type="checkbox" value="40" onclick="filterAndSortProducts()"> 40</label>
+                                <label><input type="checkbox" value="41" onclick="filterAndSortProducts()"> 41</label>
+                                <label><input type="checkbox" value="42" onclick="filterAndSortProducts()"> 42</label>
+                                <label><input type="checkbox" value="43" onclick="filterAndSortProducts()"> 43</label>
+                                <label><input type="checkbox" value="44" onclick="filterAndSortProducts()"> 44</label>
+                                <label><input type="checkbox" value="45" onclick="filterAndSortProducts()"> 45</label>
+                                <label><input type="checkbox" value="46" onclick="filterAndSortProducts()"> 46</label>
+                                <label><input type="checkbox" value="47" onclick="filterAndSortProducts()"> 47</label>
+                                <label><input type="checkbox" value="48" onclick="filterAndSortProducts()"> 48</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" value="PP" onclick="filterAndSortProducts()"> PP</label>
+                                <label><input type="checkbox" value="P" onclick="filterAndSortProducts()"> P</label>
+                                <label><input type="checkbox" value="M" onclick="filterAndSortProducts()"> M</label>
+                                <label><input type="checkbox" value="G" onclick="filterAndSortProducts()"> G</label>
+                                <label><input type="checkbox" value="GG" onclick="filterAndSortProducts()"> GG</label>
+                                <label><input type="checkbox" value="XG" onclick="filterAndSortProducts()"> XG</label>
+                                <label><input type="checkbox" value="XXG" onclick="filterAndSortProducts()"> XXG</label>
+                                <label><input type="checkbox" value="U" onclick="filterAndSortProducts()"> U</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter">
+                    <h3 onclick="toggleSection('product-type-options')">Tipo de Produto <span class="arrow">▼</span>
+                    </h3>
+                    <div id="product-type-options" class="filter-options hidden">
+                        <label><input type="checkbox" value="tenis" onclick="filterAndSortProducts()"> Tênis</label>
+                        <label><input type="checkbox" value="chinelo" onclick="filterAndSortProducts()"> Chinelo</label>
+                        <label><input type="checkbox" value="bone" onclick="filterAndSortProducts()"> Boné</label>
+                        <label><input type="checkbox" value="blusas" onclick="filterAndSortProducts()"> Blusas</label>
+                        <label><input type="checkbox" value="camisetas" onclick="filterAndSortProducts()">
+                            Camisetas</label>
+                    </div>
+                </div>
+                <button onclick="filterAndSortProducts()">Filtrar</button>
+            </article>
+        </div>
+    </section>
+    <!-- ================================================================================================================= -->
+    <section id="sessao-produtos" class="sessao-produtos">
+    <div class="box-tamanho-direito" id="conjunto-imagens">
+        <a href="/web/marcas/Nike-Section/poduto-TÊNIS NIKE AIR FORCE 1 ´07 SE FEMININO.html">
+             <!-- https://www.artwalk.com.br/tenis-adidas-forum-low-cl-masculino-ie720-4-700/p -->
+        <article class="articleBoot" id="box_boot1">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="https://artwalk.vtexassets.com/arquivos/ids/465445-800-auto?v=638349816732800000&width=800&height=auto&aspect=true">
+            </div>
+            <div class="divNomeProduto">
+                <p>TÊNIS NIKE AIR FORCE 1 '07 SE FEMININO</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 899,99</p>
+                <p class="precoParcelado"> 10X R$ 89,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+        </a>
+        <a href="/web/marcas/Nike-Section/produto-Tênis Nike Air Force 1 BG Masculino.html">
+        <article class="articleBoot" id="box_boot2">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="https://artwalk.vtexassets.com/arquivos/ids/442977-800-auto?v=638296185774100000&width=800&height=auto&aspect=true">
+                <!--https://www.artwalk.com.br/tenis-adidas-ozweego-masculino-ie481-6-400/p -->
+            </div>
+            <div class="divNomeProduto">
+                <p>TÊNIS NIKE AIR FORCE 1 BG MASCULINO
+                </p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+    </a>
+    <a href="/web/marcas/Nike-Section/produto-TÊNIS NIKE ZOOM VOMERO 5 SP MASCULINO.html">
+        <article class="articleBoot" id="box_boot3">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="https://artwalk.vtexassets.com/arquivos/ids/435178-800-auto?v=638277175823100000&width=800&height=auto&aspect=true">
+                <!-- https://www.artwalk.com.br/tenis-adidas-superstar-82-masculino-id215-1-100/p -->
+            </div>
+            <div class="divNomeProduto">
+                <p>TÊNIS NIKE ZOOM VOMERO 5 SP MASCULINO</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 809,99</p>
+                <p class="precoParcelado">10x de R$ 80,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+    </a>
+    <a href="/web/marcas/Nike-Section/produto-TÊNIS NIKE DUNK LOW RETRO MASCULINO.html">
+        <article class="articleBoot" id="box_boot3">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="https://artwalk.vtexassets.com/arquivos/ids/394894-800-auto?v=638195263971930000&width=800&height=auto&aspect=true">
+                <!-- https://www.artwalk.com.br/tenis-adidas-adimatic-masculino-hq690-9-200/p -->
+            </div>
+            <div class="divNomeProduto">
+                <p>TÊNIS NIKE DUNK LOW RETRO MASCULINO</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 719,99</p>
+                <p class="precoParcelado"> 10X R$ 71,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+    </a>
+
+    <a href="/web/marcas/Nike-Section/produto-TÊNIS NIKE AIR MAX TERRASCAPE PLUS NN MASCULINO.html">
+        <article class="articleBoot" id="box_boot3">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="https://authenticfeet.vteximg.com.br/arquivos/ids/393866-1000-1000/GY935-3-001-1.jpg?v=638404003773970000">
+                <!--https://www.authenticfeet.com.br/tenis-adidas-ultraboost-light-feminino-gy935-3-001/p-->
+            </div>
+            <div class="divNomeProduto">
+                <p>TÊNIS NIKE AIR MAX TERRASCAPE PLUS NN MASCULINO</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 699,99</p>
+                <p class="precoParcelado"> 10X x R$ 69,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+    </a>
+
+    </div>
+    <!-- primeira parte da sessão -->
+    <!-- =========================================================================================================== -->
+    <div class="box-tamanho-direito" id="conjunto-imagens">
+        <a href="/web/marcas/Nike-Section/produto-TÊNIS NIKE JA 1 CNY MASCULINO.html"> <!-- Adicione o link aqui -->
+        <article class="articleBoot" id="box_boot1">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="https://authenticfeet.vteximg.com.br/arquivos/ids/399843-1000-1000/HP597-4-001-1.jpg?v=638417029022570000">
+                <!-- https://www.authenticfeet.com.br/tenis-adidas-avryn-hp597-4-001/p -->
+            </div>
+            <div class="divNomeProduto">
+                <p>TÊNIS NIKE JA 1 CNY MASCULINO</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 899,99</p>
+                <p class="precoParcelado"> 10X R$ 89,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+        </a>
+        <a href="/web/marcas/Nike-Section/produto-TÊNIS NIKE DUNK LOW FEMININO.html">
+        <article class="articleBoot" id="box_boot2">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="https://authenticfeet.vteximg.com.br/arquivos/ids/273421-1000-1000/GY681-8-001-1.jpg?v=637976508817400000">
+                <!-- https://www.authenticfeet.com.br/tenis-adidas-nmd_v3-feminino-gy681-8-001/p-->
+            </div>
+            <div class="divNomeProduto">
+                <p>TÊNIS NIKE DUNK LOW FEMININO</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 719,99</p>
+                <p class="precoParcelado"> 10X R$ 71,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+    </a>
+    <a href="/web/marcas/Nike-Section/produto-TÊNIS NIKE W AIR MAX 90 SE FEMININO.html">
+        <article class="articleBoot" id="box_boot3">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="https://authenticfeet.vteximg.com.br/arquivos/ids/292829-1000-1000/HP598-0-001-1.jpg?v=638132895667100000">
+                <!-- https://www.authenticfeet.com.br/tenis-adidas-avryn-hp598-0-001/p -->
+            </div>
+            <div class="divNomeProduto">
+                <p>TÊNIS NIKE W AIR MAX 90 SE FEMININO</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 769,99</p>
+                <p class="precoParcelado"> 10X R$ 76,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+    </a>
+    <a href="/web/marcas/Nike-Section/produto-TÊNIS NIKE ZOOM VOMERO 5 SP MASCULINO.html">
+        <article class="articleBoot" id="box_boot3">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="https://artwalk.vtexassets.com/arquivos/ids/376010-800-auto?v=638175328502400000&width=800&height=auto&aspect=true">
+                <!-- https://www.artwalk.com.br/tenis-adidas-forum-mid-x-hanami-masculino-ig964-6-100/p -->
+            </div>
+            <div class="divNomeProduto">
+                <p>TÊNIS NIKE AIR MAX PLUS MASCULINO</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 969,99</p>
+                <p class="precoParcelado"> 10X R$ 96,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+    </a>
+
+    <a href="/web/marcas/Nike-Section/produto-TÊNIS NIKE ZOOM VOMERO 5 SP MASCULINO.html">
+        <article class="articleBoot" id="box_boot3">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="https://artwalk.vtexassets.com/arquivos/ids/440729-800-auto?v=638296159935600000&width=800&height=auto&aspect=true">
+                <!-- https://www.artwalk.com.br/tenis-adidas-crazy-1-masculino-ig589-5-300/p -->
+            </div>
+            <div class="divNomeProduto">
+                <p>TÊNIS NIKE AIR MAX FURYOSA FEMININO</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 899,99</p>
+                <p class="precoParcelado"> 10X R$ 89,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+    </a>
+
+    </div>  <!-- segunda parte da sessão -->
+    <!-- =========================================================================================================== -->
+    <div class="box-tamanho-direito" id="conjunto-imagens">
+        <a href="/web/marcas/Nike-Section/poduto-TÊNIS NIKE AIR FORCE 1 ´07 SE FEMININO.html"> <!-- Adicione o link aqui -->
+        <article class="articleBoot" id="box_boot1">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="https://artwalk.vtexassets.com/arquivos/ids/363763-800-auto?v=638146736557500000&width=800&height=auto&aspect=true">
+                <!-- https://www.artwalk.com.br/tenis-adidas-oznova-masculino-hp636-5-100/p -->
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Nike Air Force 1 '07 SE Feminino</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 699,99</p>
+                <p class="precoParcelado"> 10X R$ 69,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+        </a>
+        <a href="/web/marcas/Nike-Section/produto-Tênis Nike Air Force 1 BG Masculino.html">
+        <article class="articleBoot" id="box_boot2">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="https://artwalk.vtexassets.com/arquivos/ids/484070-800-auto?v=638459360092300000&width=800&height=auto&aspect=true">
+                <!-- https://www.artwalk.com.br/tenis-adidas-ozmillen-masculino-if344-7-100/p -->
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+    </a>
+    <a href="/web/marcas/Nike-Section/produto-TÊNIS NIKE ZOOM VOMERO 5 SP MASCULINO.html">
+        <article class="articleBoot" id="box_boot3">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="https://authenticfeet.vteximg.com.br/arquivos/ids/269122-1000-1000/Tenis-adidas-Puremotion-Super-Feminino-Preto-1.jpg?v=637939401878100000">
+                <!-- https://www.authenticfeet.com.br/tenis-adidas-puremotion-super-feminino-gz678-2-001/p -->
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+    </a>
+    <a href="/web/marcas/Nike-Section/produto-TÊNIS NIKE ZOOM VOMERO 5 SP MASCULINO.html">
+        <article class="articleBoot" id="box_boot3">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="https://artwalk.vtexassets.com/arquivos/ids/410389-800-auto?v=638247019243700000&width=800&height=auto&aspect=true">
+                <!-- https://www.artwalk.com.br/tenis-adidas-trae-unlimited-ie214-2-100/p -->
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+    </a>
+
+    <a href="/web/marcas/Nike-Section/produto-TÊNIS NIKE ZOOM VOMERO 5 SP MASCULINO.html">
+        <article class="articleBoot" id="box_boot3">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="https://authenticfeet.vteximg.com.br/arquivos/ids/437026-1000-1000/IF882-0-001-1.jpg?v=638562986518800000">
+                <!-- https://www.authenticfeet.com.br/tenis-adidas-adi2000-masculino-if882-0-001/p -->
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+    </a>
+
+    </div>
+    <!-- terceira parte da sessão -->
+    <!-- =========================================================================================================== -->
+    <div class="box-tamanho-direito" id="conjunto-imagens">
+        <a href="/web/marcas/Nike-Section/poduto-TÊNIS NIKE AIR FORCE 1 ´07 SE FEMININO.html"> <!-- Adicione o link aqui -->
+        <article class="articleBoot" id="box_boot1">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="https://authenticfeet.vteximg.com.br/arquivos/ids/434846-1000-1000/IF366-8-100-1.jpg?v=638562278993270000">
+                <!-- https://www.authenticfeet.com.br/chinelo-adidas-adilette-22-unissex-if366-8-100/p -->
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Nike Air Force 1 '07 SE Feminino</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 699,99</p>
+                <p class="precoParcelado"> 10X R$ 69,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+        </a>
+        <a href="/web/marcas/Nike-Section/produto-Tênis Nike Air Force 1 BG Masculino.html">
+        <article class="articleBoot" id="box_boot2">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="https://artwalk.vtexassets.com/arquivos/ids/473256-800-auto?v=638379261529830000&width=800&height=auto&aspect=true">
+                <!-- https://www.artwalk.com.br/tenis-adidas-forum-low-cl-masculino-ie720-3-001/p -->
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+    </a>
+    <a href="/web/marcas/Nike-Section/produto-TÊNIS NIKE ZOOM VOMERO 5 SP MASCULINO.html">
+        <article class="articleBoot" id="box_boot3">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="https://artwalk.vtexassets.com/arquivos/ids/440682-800-auto?v=638296159762230000&width=800&height=auto&aspect=true">
+                <!-- https://www.artwalk.com.br/tenis-adidas-superstar-xlg-if999-5-100/p -->
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+    </a>
+    <a href="/web/marcas/Nike-Section/produto-TÊNIS NIKE ZOOM VOMERO 5 SP MASCULINO.html">
+        <article class="articleBoot" id="box_boot3">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="https://artwalk.vtexassets.com/arquivos/ids/394863-800-auto?v=638195263864170000&width=800&height=auto&aspect=true">
+                <!-- https://www.artwalk.com.br/tenis-adidas-adiease-hq643-2-001/p -->
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+    </a>
+
+    <a href="/web/marcas/Nike-Section/produto-TÊNIS NIKE ZOOM VOMERO 5 SP MASCULINO.html">
+        <article class="articleBoot" id="box_boot3">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="https://artwalk.vtexassets.com/arquivos/ids/480053-800-auto?v=638442961812900000&width=800&height=auto&aspect=true">
+                <!-- https://www.artwalk.com.br/tenis-adidas-harden-volume-8-unissex-ie269-5-100/p -->
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+    </a>
+
+    </div>
+    <!-- quarta parte da sessão -->
+    <!-- =========================================================================================================== -->
+    <div class="box-tamanho-direito" id="conjunto-imagens">
+        <a href="/web/marcas/Nike-Section/poduto-TÊNIS NIKE AIR FORCE 1 ´07 SE FEMININO.html"> <!-- Adicione o link aqui -->
+        <article class="articleBoot" id="box_boot1">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="https://artwalk.vtexassets.com/arquivos/ids/319460-800-auto?v=638060180501670000&width=800&height=auto&aspect=true">
+                <!-- https://www.artwalk.com.br/chinelo-adidas-adilette-x-jeremy-scott-gy250-5-100/p -->
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Nike Air Force 1 '07 SE Feminino</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 699,99</p>
+                <p class="precoParcelado"> 10X R$ 69,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+        </a>
+        <a href="/web/marcas/Nike-Section/produto-Tênis Nike Air Force 1 BG Masculino.html">
+        <article class="articleBoot" id="box_boot2">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="https://artwalk.vtexassets.com/arquivos/ids/440631-800-auto?v=638296159563170000&width=800&height=auto&aspect=true">
+                <!-- https://www.artwalk.com.br/tenis-adidas-forum-84-low-masculino-ie993-6-100/p -->
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+    </a>
+    <a href="/web/marcas/Nike-Section/produto-TÊNIS NIKE ZOOM VOMERO 5 SP MASCULINO.html">
+        <article class="articleBoot" id="box_boot3">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="https://artwalk.vtexassets.com/arquivos/ids/535050-800-auto?v=638556110738900000&width=800&height=auto&aspect=true">
+                <!-- https://www.artwalk.com.br/tenis-adidas-forum-low-cl-masculino-id626-6-100/p -->
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+    </a>
+    <a href="/web/marcas/Nike-Section/produto-TÊNIS NIKE ZOOM VOMERO 5 SP MASCULINO.html">
+        <article class="articleBoot" id="box_boot3">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="https://artwalk.vtexassets.com/arquivos/ids/524805-800-auto?v=638518880025900000&width=800&height=auto&aspect=true">
+                <!-- https://www.artwalk.com.br/tenis-adidas-yeezy-boost-700-mnvn-gw952-4-001/p -->
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+    </a>
+
+    <a href="/web/marcas/Nike-Section/produto-TÊNIS NIKE ZOOM VOMERO 5 SP MASCULINO.html">
+        <article class="articleBoot" id="box_boot3">
+            <div class="heart">
+                <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+                <img src="https://artwalk.vtexassets.com/arquivos/ids/511920-800-auto?v=638488064155830000&width=800&height=auto&aspect=true">
+                <!-- https://www.artwalk.com.br/tenis-adidas-campus-00s-masculino-if876-5-600/p -->
+            </div>
+            <div class="divNomeProduto">
+                <p>Tênis Puma 180 Unissex</p>
+            </div>
+            <div class="precoProduto">
+                <p class="precoAVista">R$ 799,99</p>
+                <p class="precoParcelado"> 10X R$ 79,99</p>
+            </div>
+            <div class="overlay">
+                <button>ADICIONAR</button>
+
+            </div>
+        </article>
+    </a>
+
+    </div>
+ 
+    <button id="verMaisBtn">Ver Mais</button>
+    </section>
+
+
+    <section id="sessao-email" class="sessao-email">
+        <div class="caixa_de_texto">
+            <div class="newsletter-container">
+                <div class="newsletter-content">
+                    <h2>Lançamentos e novidades</h2>
+                    <p>Receba com exclusividade a nossa newsletter com tendências, promoções e muito mais</p>
+                </div>
+                <div class="newsletter-form">
+                    <form>
+                        <input type="email" required>
+                        <button type="submit">CADASTRAR</button>
+                        <div class="newsletter-privacy">
+                            <input type="checkbox" id="privacy" required>
+                            <label for="privacy">Aceito receber conteúdos da TT-Store e concordo com a <a
+                                    href="#">Política de Privacidade</a></label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="sessao-footer" class="sessao-footer">
+        <div class="footer-section">
+            <h3>Produtos</h3>
+            <ul>
+                <li><a href="#">Novidades</a></li>
+                <li><a href="#">Tênis</a></li>
+                <li><a href="#">Tênis masculino</a></li>
+                <li><a href="#">Tênis feminino</a></li>
+                <li><a href="#">Marcas</a></li>
+                <li><a href="#">Outlet</a></li>
+                <li><a href="#">Roupas</a></li>
+                <li><a href="#">Acessórios</a></li>
+                <li><a href="#">Calçados</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3 class="colecao">Coleções Especiais</h3>
+            <ul>
+                <li><a href="#">adidas adi2000</a></li>
+                <li><a href="#">adidas Forum</a></li>
+                <li><a href="#">Adidas Superstar</a></li>
+                <li><a href="#">Nike Air Force</a></li>
+                <li><a href="#">Air Jordan 1</a></li>
+                <li><a href="#">Nike Air Max 90</a></li>
+                <li><a href="#">Nike Air Max 97</a></li>
+                <li><a href="#">Vans Authentic</a></li>
+                <li><a href="#">Vans Old Skool</a></li>
+                <li><a href="#">Vans Ultrarange</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3 class="inst">Institucional</h3>
+            <ul>
+                <li><a href="#">Quem somos</a></li>
+                <li><a href="#">Trabalhe conosco</a></li>
+                <li><a href="#">Seja um franqueado</a></li>
+                <li><a href="#">Nossas lojas</a></li>
+                <li><a href="#">Termos de uso</a></li>
+                <li><a href="#">Política de privacidade</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3 class="help">Ajuda</h3>
+            <ul>
+                <li><a href="#">Central de Relacionamento</a></li>
+                <li><a href="#">Tipos de entrega</a></li>
+                <li><a href="#">Solicite seus dados</a></li>
+                <li><a href="#">Troca e devoluções</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3 class="rede">Siga a TT-Store</h3>
+            <div class="social-media">
+                <a href="#"><img src="./images/facebook-176-svgrepo-com (1).svg" alt="Facebook"></a>
+                <a href="#"><img src="./images/instagram-svgrepo-com.svg" alt="Instagram"></a>
+            </div>
+
+        </div>
+
+    </section>
+    <div class="footer-bottom">
+        <div class="footer-bottom-section">
+            <h3>Compra segura</h3>
+            <div class="security-logos">
+                <img src="./images/stamp-0___c2cb770fe5586bf7872946994001842a.png" alt="Security Logo 1">
+                <img src="./images/stamp-1___d2c88024b14012b7f729144058d5298e.png" alt="Security Logo 2">
+                <img src="./images/stamp-2___a429230590cca5214c76fb6c728d7acd.png" alt="Security Logo 3">
+            </div>
+        </div>
+        <div class="footer-bottom-section">
+            <h3>Formas de Pagamento</h3>
+            <div class="payment-logos">
+                <img src="./images/payment-0___860a781f1ca34daa718a076adbcccb93.svg" alt="Elo">
+                <img src="./images/payment-1___dc14c9b5f4b028cd543a8c7891f85ded.svg" alt="Amex">
+                <img src="./images/payment-2___8c2c9e77e0fa7c4e30406cc266200383.svg" alt="Pix">
+                <img src="./images/payment-3___5fdd63de0ea3cc36f1b3b1558c8a5226.svg" alt="Mastercard">
+                <img src="./images/payment-4___f0dcbfd8854d473a269f3e06ed551d56.svg" alt="Hipercard">
+                <img src="./images/payment-5___33dd13fd5f74a8adf402c81164c30b0e.svg" alt="Visa">
+            </div>
+        </div>
+        <div class="footer-bottom-section">
+            <h3>Fale com a gente</h3>
+            <p>De segunda a sexta, das 08:00 às 19:00, estamos aqui para ajudar. Nos chame nos canais digitais!</p>
+            <p><a href="tel:1121918391"> (11) 2191-8391<img id="phone" src="./images/phone-svgrepo-com (1).svg"
+                        alt="Phone"></a></p>
+        </div>
+    </div>
+
+    <script src="/web/src/script-sessao-nike.js"></script> <!-- O javascript está em um arquivo à parte -->
+</body>
+
+</html>

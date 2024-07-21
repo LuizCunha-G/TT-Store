@@ -92,3 +92,45 @@ function adicionarMaisProdutos() {
 
 // Adiciona um listener para o evento de clique no botão
 verMaisBtn.addEventListener('click', adicionarMaisProdutos);
+
+document.addEventListener('DOMContentLoaded', () => {
+    fetch('http://localhost:3000/produtos')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Erro ao carregar os produtos.');
+        }
+        return response.json();
+      })
+      .then(produtos => {
+        // Manipula os dados recebidos e insere dinamicamente no HTML
+        const container = document.getElementById('conjunto-imagens');
+        produtos.forEach(produto => {
+          const article = document.createElement('article');
+          article.classList.add('articleBoot');
+          article.id = `box_${produto.codigo}`;
+  
+          article.innerHTML = `
+            <div class="heart">
+              <img src="./images/heart-alt-svgrepo-com.svg">
+            </div>
+            <div class="divImgProduto">
+              <img src="${produto.imagem}">
+            </div>
+            <div class="divNomeProduto">
+              <p>${produto.nome}</p>
+            </div>
+            <div class="precoProduto">
+              <p class="precoAVista">R$ ${produto.precoAVista}</p>
+              <p class="precoParcelado"> 10X R$ ${produto.precoParcelado}</p>
+            </div>
+            <div class="overlay">
+              <button>ADICIONAR</button>
+            </div>
+          `;
+  
+          container.appendChild(article);
+        });
+      })
+      .catch(error => console.error('Erro na requisição fetch:', error));
+  });
+  

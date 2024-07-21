@@ -1,0 +1,702 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  html{
+    scroll-behavior: smooth;
+  }
+  
+  body{
+    background: whitesmoke;
+    width: 100%;
+  }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f7f7f7;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-left img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.header-left h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.header-price {
+    font-size: 16px;
+    color: #000;
+}
+
+.add-to-cart {
+    background-color: #ff6200;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+nav{
+  position: sticky; /* position sticky e top 0 irão manter o nav sempre visível e no topo da tela, sem afetar outros elementos*/
+  top: 0;
+  width: 100%;
+  height: 75px;
+  background: black;
+  backdrop-filter: blur(19.5px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  padding: 20px;
+}
+
+.logo{
+  width: 100px;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-links li{
+  list-style: none;
+  width: 100px;
+}
+
+.links, .buscar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s ease;
+  border-bottom: 2px solid black;
+  padding-bottom: 10px;
+}
+
+.links:hover, .buscar:hover  {
+  border-bottom: 2px solid white;
+}
+
+.nav-auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-auth li{
+  list-style: none;
+  width: 50px;
+}
+
+.buscar{
+  cursor: pointer;
+}
+
+.nav-auth img{
+  width: 24px;
+}
+
+.barraPesquisa {
+  position: absolute; /* Ajustei para position absolute */
+  top: 100%; /* Posicione abaixo da barra de navegação */
+  right: 20px; /* Alinhado à direita */
+  display: none;
+  background-color: #ffffff86;
+  color: #000; /* Ajustei a cor do texto */
+  width: 280px;
+  border-radius: 4px;
+  border: #000000 3px solid;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adicionei sombra */
+  gap: 50%;
+}
+
+.barraPesquisa input[type="text"] {
+  width: calc(210% - 350px); /* Ajuste para o tamanho do input */
+  margin-right: 10px; /* Espaçamento à direita */
+}
+
+.barraPesquisa button {
+  width: 50px; /* Largura do botão */
+  padding: 8px; /* Espaçamento interno do botão */
+  background-color: #290429;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+}
+
+.barraPesquisa button:hover {
+  background-color: #000000;
+}
+
+.container {
+    display: flex;
+    padding: 20px;
+}
+
+.image-section {
+    flex: 1;
+    position: relative;
+}
+
+#currentImage{
+    width: 80%;
+    height: 100%;
+}
+.image-section img {
+    max-width: 80%;
+}
+
+.discount {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #00f;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.details-section {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.details-section h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.product-code {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.price {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #888;
+    margin-right: 10px;
+}
+
+.discounted-price {
+    color: #000;
+    font-weight: bold;
+}
+
+.installment {
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.other-options {
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.color-options {
+    display: flex;
+}
+
+.color {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.color.white {
+    background-color: #fff;
+}
+
+.color.beige {
+    background-color: #f5f5dc;
+}
+
+.size-section {
+    font-size: 14px;
+    color: #000;
+}
+
+.sizes {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.size {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.description-section {
+    display: flex;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.description-image {
+    flex: 1;
+}
+
+.description-image img {
+    max-width: 100%;
+}
+
+.description-details {
+    flex: 2;
+    padding-left: 20px;
+}
+
+.description-details img {
+    width: 50px;
+    height: 50px;
+}
+
+.description-details p {
+    font-size: 14px;
+    color: #000;
+    line-height: 1.5;
+    margin: 20px 0;
+}
+
+.description-details a {
+    color: #ff6200;
+    text-decoration: none;
+}
+
+/* Carousel Section */
+.carousel-section {
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.carousel-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 200px;
+    margin-right: 20px;
+}
+
+.carousel-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+/* Sessão Email */
+.sessao-email {
+    background: #290429; /* Cor de fundo */
+    margin: auto; /* Margem automática */
+    display: flex; /* Ativa flexbox */
+    flex-direction: row; /* Organização em coluna */
+    align-items: center; /* Alinha itens no centro */
+    height: 45vh; /* Altura da tela (50%) */
+    max-height: 100vh; /* Altura máxima (tela cheia) */
+    justify-content: space-around; /* Distribui espaço entre as marcas */
+  }
+  
+  .newsletter-container {
+    display: flex;
+    background-color: #290429;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    max-width: 2000px;
+    width: 100%;
+  }
+  
+  .newsletter-content {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .newsletter-content h2 {
+    font-size: 30px;
+    margin: 0 0 10px;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .newsletter-content p {
+    font-size: 20px;
+    color: #ffffff;
+  }
+  
+  .newsletter-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .newsletter-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .newsletter-form input[type="email"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 16px;
+  }
+  
+  .newsletter-form button {
+    padding: 10px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .newsletter-form button:hover {
+    background-color: #9a64af;
+  }
+  
+  .newsletter-privacy {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .newsletter-privacy input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  .newsletter-privacy label {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .newsletter-privacy a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .newsletter-privacy a:hover {
+    text-decoration: underline;
+  }
+  
+  /*=============================================================================*/
+  
+  /* Sessão Footer */
+  .sessao-footer {
+    background: #000000; /* Cor de fundo */
+    margin: auto; /* Margem automática */
+    display: flex; /* Ativa flexbox */
+    flex-direction: row; /* Organização em coluna */
+    align-items: center; /* Alinha itens no centro */
+    height: 60vh; /* Altura da tela (50%) */
+    max-height: 100vh; /* Altura máxima (tela cheia) */
+    justify-content: space-around; /* Distribui espaço entre as marcas */
+  }
+  
+  .footer-section {
+    margin: 10px;
+    min-width: 200px;
+  }
+  
+  .footer-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  .colecao{
+    margin-top:   5vh;
+  }
+  .inst{
+    margin-top:  -15vh;
+  }
+  
+  .help{
+    margin-top:  -25vh;
+  }
+  
+  .rede{
+    margin-top:  -25vh;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-section ul li a:hover {
+    color: #ddd;
+  }
+  
+  .social-media {
+    display: flex;
+    gap: 10px;
+    margin-right: 30px;
+    justify-content: center;
+    /* border: rgb(182, 23, 23) 2px solid; */
+    
+  }
+  
+  .social-media a img {
+    width: 50px;
+    height: 50px;
+    margin-right: 27px;
+    /* border: rgb(204, 202, 202) 2px solid; */
+  }
+  
+  .app-download p {
+    margin: 10px 0;
+  }
+  
+  .app-download a img {
+    width: 120px;
+    margin: 5px 0;
+  }
+  
+  .footer-bottom {
+    background-color: #000000;
+    color: white;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-top: 1px solid #333;
+  }
+  
+  .footer-bottom-section {
+    margin: 10px;
+    min-width: 200px;
+    text-align: center;
+  }
+  
+  .footer-bottom-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  
+  .footer-bottom-section p {
+    margin: 10px 0;
+  }
+  
+  .footer-bottom-section img {
+    width: 50px;
+    height: auto;
+    margin: 0 10px;
+  }
+  
+  .footer-bottom-section .payment-logos img {
+    width: 50px;
+    height: auto;
+    margin: 5px 10px;
+  }
+  
+  .footer-bottom-section a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footer-bottom-section a:hover {
+    color: #ddd;
+  }
+  #phone{
+    margin-bottom: auto;
+    width: 25px;
+  }
+  
+
+  /* Carrossel de miniaturas */
+.thumbnail-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 425px;
+    margin: 20px auto;
+}
+
+.thumbnail-track-container {
+    overflow: hidden;
+    width: 80%;
+}
+
+.thumbnail-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.thumbnail {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    object-fit: cover;
+    border: 2px solid transparent;
+    transition: border 0.3s;
+    margin-right: 10px;
+}
+
+.thumbnail:hover,
+.thumbnail.active {
+    border: 2px solid #000;
+}
+
+.thumbnail-button {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.thumbnail-button.prev {
+    left: 0;
+}
+
+.thumbnail-button.next {
+    right: 0;
+}
+
+/* Carrossel "Você também pode gostar" */
+.carousel-section {
+    padding: 5px;
+    background: #f9f9f9;
+    margin-top: 20px;
+}
+
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 200px;
+    margin-right: 10px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 1;
+}
+
+.carousel-button.prev {
+    left: 0;
+}
+
+.carousel-button.next {
+    right: 0;
+}
